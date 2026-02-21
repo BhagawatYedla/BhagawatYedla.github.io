@@ -157,6 +157,38 @@
       .skills-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
+
+    @media (max-width: 600px) {
+        .skills-grid { grid-template-columns: 1fr; }
+    }
+    
+    .skill-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        padding: 22px;
+        border-radius: 6px;
+        transition: 0.2s ease;
+    }
+    
+    .skill-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    }
+    
+    .skill-card h3 {
+        margin: 0 0 12px 0;
+        color: #111827;
+        font-size: 16px;
+    }
+    
+    .skill-card p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    
     @media (max-width: 600px) {
       .skills-grid { grid-template-columns: 1fr; }
     }
