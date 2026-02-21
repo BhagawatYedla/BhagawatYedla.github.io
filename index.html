@@ -47,6 +47,82 @@
       text-decoration: underline;
     }
 
+
+/* ================================================= */
+/* =================== SIDEBAR ===================== */
+/* ================================================= */
+
+.page-layout{
+  display:grid;
+  grid-template-columns: 240px 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  align-items:start;
+}
+
+/* Sidebar box */
+.sidebar{
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+  border-radius:6px;
+  padding:16px;
+}
+
+.sidebar h3{
+  margin:0 0 12px 0;
+  font-size:14px;
+  color:#111827;
+  letter-spacing:0.2px;
+}
+
+.toc{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.toc a{
+  display:block;
+  padding:8px 10px;
+  border-radius:6px;
+  color:#1e40af;
+  background:transparent;
+}
+
+.toc a:hover{
+  background:#f3f4f6;
+  text-decoration:none;
+}
+
+/* Make main content use normal section spacing */
+.main-content section{
+  padding: 40px 0;        /* override your section padding a bit */
+  max-width: none;
+  margin: 0;
+}
+
+/* Mobile: hide sidebar and use normal layout */
+@media (max-width: 900px){
+  .page-layout{
+    grid-template-columns: 1fr;
+  }
+  .sidebar{
+    position: static;
+    top:auto;
+  }
+}
+
+
+
+    
     /* ===== Experience tiles ===== */
     .grid {
       display: grid;
@@ -253,6 +329,21 @@
     <p>Systems Engineer building secure and controllable autonomous platforms</p>
   </header>
 
+    <div class="page-layout">
+      <aside class="sidebar">
+        <h3>Contents</h3>
+        <ul class="toc">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Technical Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </aside>
+    
+      <div class="main-content">
+
+  
   <section>
     <h2>About Me</h2>
     <p>
@@ -489,6 +580,9 @@
     </p>
   </section>
 
+        </div>
+</div>
+        
   <footer>© 2026 Bhagawat Yedla</footer>
 </body>
 </html>
