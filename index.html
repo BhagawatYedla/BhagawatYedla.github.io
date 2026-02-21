@@ -161,6 +161,57 @@ a:hover {
     margin: 0;
 }
 
+/* ================================================= */
+/* ================== SKILLS GRID ================== */
+/* ================================================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skill-card {
+    background: #111827;
+    padding: 22px;
+    border-radius: 16px;
+    transition: 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    background: #1f2937;
+}
+
+.skill-card h3 {
+    margin-top: 0;
+    color: #60a5fa;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.skill-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+        
 /* ---------- Footer (optional if you add one) ---------- */
 
 footer {
@@ -233,7 +284,9 @@ footer {
     </div>
 </section>
 
-
+/* ================================================= */
+/* ==================   PROGECTS  ================== */
+/* ================================================= */
     
 <section>
     <h2>Projects</h2>
@@ -334,8 +387,49 @@ footer {
     </div>
 </section>
 
+/* ================================================= */
+/* ================== SKILLS  ================== */
+/* ================================================= */
 
+<section>
+    <h2>Technical Skills</h2>
 
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <h3>CAD & Simulation</h3>
+            <p>
+                SolidWorks, Siemens NX, CATIA, Altium, 
+                ANSYS (Structural / Thermal / Fluent), Icepak
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Programming & Control</h3>
+            <p>
+                C++, Python, MATLAB/Simulink, Arduino, 
+                MicroPython, FreeRTOS, ROS2
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Hardware & Prototyping</h3>
+            <p>
+                BLDC Motor Control, PCB Design, 
+                3D Printing, Machining, Soldering
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Communication Protocols</h3>
+            <p>
+                UART, SPI, I2C, CAN, Ethernet, Wi-Fi, 
+                BLE, LoRa, TCP/IP, UDP, MQTT
+            </p>
+        </div>
+
+    </div>
+</section>
 
     
 
