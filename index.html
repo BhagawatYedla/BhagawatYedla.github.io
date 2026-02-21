@@ -1,209 +1,319 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhagawat Yedla | Systems Engineer</title>
 
-/* ---------- Base Layout ---------- */
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      background: #f8f5ef; /* cream */
+      color: #1f2937;      /* slate */
+    }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    background: #f8f5ef;    /* cream */
-    color: #1f2937;         /* slate text */
-}
+    header {
+      padding: 80px 20px;
+      text-align: center;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
 
-header {
-    padding: 80px 20px;
-    text-align: center;
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
-}
+    h1 {
+      font-size: 42px;
+      margin: 0 0 10px 0;
+    }
 
-h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
+    h2 {
+      color: #1e3a8a;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 10px;
+      margin: 0 0 30px 0;
+    }
 
-h2 {
-    color: #1e3a8a;         /* deep navy */
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-}
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-section {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
-}
+    a {
+      color: #1e40af;
+      text-decoration: none;
+    }
 
-/* ---------- Links ---------- */
+    a:hover {
+      text-decoration: underline;
+    }
 
-a {
-    color: #1e40af;         /* professional blue */
-    text-decoration: none;
-}
+    /* ===== Experience tiles ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
 
-a:hover {
-    text-decoration: underline;
-}
+    .tile {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      padding: 25px;
+      border-radius: 6px;
+      transition: 0.2s ease;
+    }
 
-/* ================================================= */
-/* =============== PROJECT TILES =================== */
-/* ================================================= */
+    .tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
+    .tile h3 {
+      margin: 0 0 12px 0;
+      color: #111827;
+      font-size: 18px;
+      line-height: 1.3;
+    }
 
-/* Tablet */
-@media (max-width: 1100px) {
-    .projects-grid { grid-template-columns: repeat(2, 1fr); }
-}
+    .tile p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-/* Mobile */
-@media (max-width: 650px) {
-    .projects-grid { grid-template-columns: 1fr; }
-}
+    /* ===== Project tiles (3 columns) ===== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 30px;
+    }
 
-.project-tile {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    transition: 0.2s ease;
-    display: flex;
-    flex-direction: column;
-}
+    @media (max-width: 1100px) {
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    }
 
-.project-tile:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-}
+    @media (max-width: 650px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
 
-.project-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-}
+    .project-tile {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
 
-.project-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex: 1;
-}
+    .project-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    }
 
-.project-content h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #111827;     /* dark text for light theme */
-    line-height: 1.3;
-}
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
 
-.project-content p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.6;
-}
+    .project-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
 
-.project-links {
-    margin-top: auto;
-    font-size: 14px;
-}
+    .project-content h3 {
+      margin: 0;
+      color: #111827;
+      font-size: 18px;
+      line-height: 1.3;
+    }
 
-/* ================================================= */
-/* =============== EXPERIENCE TILES ================ */
-/* ================================================= */
+    .project-content p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
+    .project-links {
+      margin-top: auto;
+      font-size: 14px;
+    }
 
-.tile {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    padding: 25px;
-    border-radius: 6px;
-    transition: 0.2s ease;
-}
+    /* ===== Skills (4 columns) ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 30px;
+    }
 
-.tile:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-}
+    @media (max-width: 1000px) {
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    }
 
-.tile h3 {
-    margin-top: 0;
-    color: #111827;     /* dark text */
-    font-size: 18px;
-}
+    @media (max-width: 600px) {
+      .skills-grid { grid-template-columns: 1fr; }
+    }
 
-.tile p {
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-}
+    .skill-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      padding: 22px;
+      border-radius: 6px;
+      transition: 0.2s ease;
+    }
 
-/* ================================================= */
-/* ================== SKILLS GRID ================== */
-/* ================================================= */
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-top: 30px;
-}
+    .skill-card h3 {
+      margin: 0 0 12px 0;
+      color: #111827;
+      font-size: 16px;
+    }
 
-/* Tablet */
-@media (max-width: 1000px) {
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
-}
+    .skill-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-/* Mobile */
-@media (max-width: 600px) {
-    .skills-grid { grid-template-columns: 1fr; }
-}
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      font-size: 14px;
+      color: #6b7280;
+    }
+  </style>
+</head>
 
-.skill-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    padding: 22px;
-    border-radius: 6px;
-    transition: 0.2s ease;
-}
+<body>
+  <header>
+    <h1>Bhagawat Yedla</h1>
+    <p>Systems Engineer building secure and controllable autonomous platforms</p>
+  </header>
 
-.skill-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-}
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Ph.D. candidate in ECE with a strong foundation in vehicle dynamics, control systems, and embedded software development.
+      I build scalable autonomous vehicle platforms to study functional safety, cybersecurity, and real-time system behavior.
+      My experience spans torque vectoring, steer-by-wire systems, RTOS-based motor control, and hardware-in-the-loop validation.
+      I aim to pursue a career in functional safety and systems engineering, developing fail-safe and fail-operational architectures
+      for next-generation electric and autonomous vehicles.
+    </p>
+  </section>
 
-.skill-card h3 {
-    margin-top: 0;
-    color: #111827;     /* dark text */
-    font-size: 16px;
-    margin-bottom: 12px;
-}
+  <section>
+    <h2>Experience</h2>
+    <div class="grid">
+      <div class="tile">
+        <h3>Graduate Research Assistant<br>University of Florida (2021–Present)</h3>
+        <p>
+          Led vehicular safety/security exploration platforms. Defined requirements and validation plans, implemented RTOS-based
+          steer-by-wire and torque vectoring systems, and ran fault-injection experiments on safety-critical components.
+        </p>
+      </div>
 
-.skill-card p {
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-}
+      <div class="tile">
+        <h3>Mechanical Engineer<br>Laxco Inc (2020)</h3>
+        <p>
+          Designed precision electromechanical assemblies; performed FEA and failure analysis; developed an anti-backlash mechanism
+          achieving 0.9 µm precision.
+        </p>
+      </div>
 
-/* ---------- Footer ---------- */
+      <div class="tile">
+        <h3>Graduate Research Assistant<br>University of Florida (2019–2020)</h3>
+        <p>
+          Designed thermally managed enclosures for NMR/NQR systems, reducing test cycle time by 76% through thermal/EMI optimization.
+        </p>
+      </div>
+    </div>
+  </section>
 
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    background: #ffffff;
-    border-top: 1px solid #e5e7eb;
-    font-size: 14px;
-    color: #6b7280;
-}
+  <section>
+    <h2>Projects</h2>
 
-</style>
+    <div class="projects-grid">
+      <div class="project-tile">
+        <img class="project-img" src="assets/rav_platform.jpeg" alt="RAV platform" />
+        <div class="project-content">
+          <h3>RAV: Rapid Analysis Vehicle Platform</h3>
+          <p>Unified vehicle systems platform for evaluating E/E architectures under nominal and faulted conditions.</p>
+          <div class="project-links">
+            <a href="#">View Project →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-tile">
+        <div class="project-content">
+          <h3>Steer-by-Wire Security (IEEE IV 2025)</h3>
+          <p>First experimental study of physical-layer encoder attacks on Steer-by-Wire systems.</p>
+          <div class="project-links">
+            <a href="sbw.html">Read More →</a> |
+            <a href="https://ieeexplore.ieee.org/abstract/document/11097437" target="_blank">IEEE</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-tile">
+        <div class="project-content">
+          <h3>Wheel Speed Sensor Exploration (ICCE 2025)</h3>
+          <p>Educational platform for interactive exploration of WSS attack vectors in safety-critical systems.</p>
+          <div class="project-links">
+            <a href="help-wss.html">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>CAD & Simulation</h3>
+        <p>SolidWorks, Siemens NX, CATIA, Altium, ANSYS (Structural/Thermal/Fluent), Icepak</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Programming & Control</h3>
+        <p>C++, Python, MATLAB/Simulink, Arduino, MicroPython, FreeRTOS, ROS2</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Hardware & Prototyping</h3>
+        <p>BLDC Motor Control, PCB Design, 3D Printing, Machining, Soldering</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Communication Protocols</h3>
+        <p>UART, SPI, I2C, CAN, Ethernet, Wi-Fi, BLE, LoRa, TCP/IP, UDP, MQTT</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>
+      <a href="https://github.com/BhagawatYedla" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/bhagawatyedla/" target="_blank">LinkedIn</a> |
+      <a href="https://scholar.google.com/citations?hl=en&user=ENHu-lgAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Google Scholar</a>
+    </p>
+  </section>
+
+  <footer>© 2026 Bhagawat Yedla</footer>
+</body>
+</html>
