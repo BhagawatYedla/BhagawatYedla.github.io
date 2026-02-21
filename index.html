@@ -51,6 +51,42 @@
             color: #38bdf8;
         }
 
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .tile {
+            background: #111827;
+            padding: 25px;
+            border-radius: 14px;
+            transition: 0.25s ease;
+        }
+        
+        .tile:hover {
+            transform: translateY(-6px);
+            background: #1f2937;
+        }
+        
+        .tile h3 {
+            margin-top: 0;
+            color: #60a5fa;
+        }
+        
+        .tile p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        
+                
+
+
+        
+
     </style>
 </head>
 
