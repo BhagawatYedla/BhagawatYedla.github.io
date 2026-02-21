@@ -34,21 +34,42 @@
             margin: auto;
         }
         
-        .project {
-            background: #111827;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            transition: 0.3s ease;
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
         
-        .project:hover {
-            transform: translateY(-5px);
+        .project-tile {
+            background: #111827;
+            padding: 22px;
+            border-radius: 16px;
+            transition: 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .project-tile:hover {
+            transform: translateY(-6px);
             background: #1f2937;
         }
         
-        a {
-            color: #38bdf8;
+        .project-tile h3 {
+            margin-top: 0;
+            color: #60a5fa;
+            font-size: 18px;
+        }
+        
+        .project-tile p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .project-links {
+            margin-top: 15px;
+            font-size: 14px;
         }
 
 
@@ -154,255 +175,101 @@
 <section>
     <h2>Projects</h2>
 
-    <div class="project">
-        <h3>RAV: Rapid Analysis Vehicle Platform for Safety and Security Exploration</h3>
+    <div class="projects-grid">
 
-        <!-- Image -->
-        <img src="assets/rav_platform.jpeg" 
-             alt="RAV Platform Image" 
-             style="width:100%; max-width:800px; border-radius:10px; margin:15px 0;">
+        <div class="project-tile">
+            <div>
+                <h3>RAV: Rapid Analysis Vehicle Platform</h3>
+                <p>Unified vehicle systems platform for evaluating E/E architectures under nominal and faulted conditions.</p>
+            </div>
+            <div class="project-links">
+                <a href="#">View Project →</a>
+            </div>
+        </div>
 
-        <p>
-            Unified platform for evaluating E/E architectures under faulted conditions.
-        </p>
+        <div class="project-tile">
+            <div>
+                <h3>Steer-by-Wire Security (IEEE IV 2025)</h3>
+                <p>First experimental study of physical-layer encoder attacks on Steer-by-Wire systems.</p>
+            </div>
+            <div class="project-links">
+                <a href="sbw.html">Read More →</a> |
+                <a href="https://ieeexplore.ieee.org/abstract/document/11097437" target="_blank">IEEE</a>
+            </div>
+        </div>
 
-        <a href="https://github.com/yourusername/project-link">View Project</a>
+        <div class="project-tile">
+            <div>
+                <h3>Wheel Speed Sensor Exploration (ICCE 2025)</h3>
+                <p>Educational platform for interactive exploration of WSS attack vectors in safety-critical systems.</p>
+            </div>
+            <div class="project-links">
+                <a href="help-wss.html">Read More →</a>
+            </div>
+        </div>
+
+        <div class="project-tile">
+            <div>
+                <h3>WSS Virtual Attack Platform (IEEE MASS 2025)</h3>
+                <p>Hybrid Arduino + Unity environment demonstrating PID-controlled magnetic spoofing attacks.</p>
+            </div>
+            <div class="project-links">
+                <a href="wssvr.html">Read More →</a>
+            </div>
+        </div>
+
+        <div class="project-tile">
+            <div>
+                <h3>AutoHal (ICCE 2022)</h3>
+                <p>Hands-on exploration platform for ranging sensor attacks in perception-driven automotive systems.</p>
+            </div>
+            <div class="project-links">
+                <a href="autohal.html">Read More →</a>
+            </div>
+        </div>
+
+        <div class="project-tile">
+            <div>
+                <h3>VeCAEP (VTC 2023)</h3>
+                <p>Vehicular communication attack platform analyzing CACC vulnerabilities.</p>
+            </div>
+            <div class="project-links">
+                <a href="vecaep.html">Read More →</a>
+            </div>
+        </div>
+
+        <div class="project-tile">
+            <div>
+                <h3>ML Attacks in Automotive Systems (ICCE 2023)</h3>
+                <p>Mixed-reality adversarial attack platform targeting traffic sign recognition models.</p>
+            </div>
+            <div class="project-links">
+                <a href="ml-attacks.html">Read More →</a>
+            </div>
+        </div>
+
+        <div class="project-tile">
+            <div>
+                <h3>Vehicular Health Monitoring (ICCE 2025)</h3>
+                <p>IoT-based framework for monitoring drivetrain, suspension, and steering failure modes.</p>
+            </div>
+            <div class="project-links">
+                <a href="veh-health.html">Read More →</a>
+            </div>
+        </div>
+
+        <div class="project-tile">
+            <div>
+                <h3>MASC Wearable Platform</h3>
+                <p>Wearable device for infectious disease detection; hardware design, PCB, and validation testing.</p>
+            </div>
+            <div class="project-links">
+                <a href="masc.html">Read More →</a>
+            </div>
+        </div>
+
     </div>
-
-
-<div class="project">
-    <h3>Steering Into Danger: Security Vulnerabilities in Steer-by-Wire Systems</h3>
-    <p>
-        First experimental study analyzing security vulnerabilities in Steer-by-Wire (SbW) systems. 
-        Designed and executed physical-layer sensor attacks on steering position encoders, 
-        demonstrating how compromised signals can destabilize vehicle dynamics in autonomous platforms.
-    </p>
-
-    <p>
-        <strong>Published in:</strong> 2025 IEEE Intelligent Vehicles Symposium (IV)
-    </p>
-
-    <a href="sbw.html">Read More →</a> |
-    <a href="https://ieeexplore.ieee.org/abstract/document/11097437" target="_blank">
-        View on IEEE Xplore
-    </a>
-
-</div>
-
-
-<div class="project">
-
-    <h3>
-        Hands-On Exploration and Learning Platform for Automotive Wheel Speed Sensor Attacks
-    </h3>
-
-    <p>
-        Designed and developed the first educational exploration platform 
-        for understanding wheel speed sensor security vulnerabilities in 
-        automotive systems. Enables interactive evaluation of attack vectors 
-        affecting safety-critical functions.
-    </p>
-
-    <!-- Video Embed -->
-    <div style="margin: 20px 0;">
-        <iframe 
-            width="100%" 
-            height="315"
-            src="https://www.youtube.com/embed/iH8v8uam_4w"
-            title="WSS Platform Demo"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-    <p>
-        <strong>Published in:</strong> 
-        2025 IEEE International Conference on Consumer Electronics (ICCE)
-    </p>
-
-    <p>
-        <a href="help-wss.html">Read More →</a> |
-        <a href="https://ieeexplore.ieee.org/abstract/document/10929833" target="_blank">
-            View on IEEE Xplore
-        </a>
-    </p>
-
-</div>
-
-
-    
-
-<div class="project">
-    <h3>Automotive Security Virtual Exploration Platform for Wheel Speed Sensor Attacks</h3>
-
-    <p>
-        Hybrid physical–virtual exploration platform combining Arduino-based 
-        wheel speed sensor attack hardware with a Unity simulation environment.
-        Demonstrated PID-controlled magnetic pulse spoofing to manipulate vehicle speed perception.
-    </p>
-
-    <p>
-        <strong>Published in:</strong> 2025 IEEE 22nd International Conference on 
-        Mobile Ad-Hoc and Smart Systems (MASS)
-    </p>
-
-    <a href="wssvr.html">Read More →</a>
-    <a href="https://ieeexplore.ieee.org/abstract/document/11206169" target="_blank">
-        View on IEEE Xplore
-    </a>    
-    
-</div>
-
-
-<div class="project">
-    <h3>AutoHal: An Exploration Platform for Ranging Sensor Attacks on Automotive Systems</h3>
-
-    <p>
-        Designed AutoHal, a flexible hands-on exploration platform for analyzing
-        security vulnerabilities in automotive ranging sensors. Enables interactive
-        evaluation of sensor-level attack scenarios affecting perception-driven systems.
-    </p>
-
-    <!-- Video Embed -->
-    <div style="margin: 20px 0;">
-        <iframe 
-            width="100%" 
-            height="315"
-            src="https://www.youtube.com/embed/2Cchy7BELUA"
-            title="AutoHal Platform Demo"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-    <p>
-        <strong>Published in:</strong> 2022 IEEE International Conference on Consumer Electronics (ICCE)
-    </p>
-
-    <a href="autohal.html">Read More →</a> |
-    <a href="https://ieeexplore.ieee.org/abstract/document/9730213" target="_blank">
-        View on IEEE Xplore
-    </a>
-</div>
-
-
-    
-
-    
-<div class="project">
-    <h3>VeCAEP: A Hands-on Exploration Platform for Vehicular Communication Attacks</h3>
-
-    <p>
-        Developed VeCAEP, a hands-on exploration platform for analyzing cybersecurity 
-        vulnerabilities in vehicular communication systems. Enables interactive evaluation 
-        of communication-layer attacks and their impact on Cooperative Adaptive Cruise Control (CACC).
-    </p>
-
-    <!-- Video Embed -->
-    <div style="margin: 20px 0;">
-        <iframe 
-            width="100%" 
-            height="315"
-            src="https://www.youtube.com/embed/YAvMjm6eUbc"
-            title="VeCAEP Platform Demo"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-    <p>
-        <strong>Published in:</strong> 2023 IEEE 97th Vehicular Technology Conference (VTC2023-Spring)
-    </p>
-
-    <a href="vecaep.html">Read More →</a> |
-    <a href="https://ieeexplore.ieee.org/abstract/document/10199804" target="_blank">
-        View on IEEE Xplore
-    </a>
-</div>
-
-
-<div class="project">
-    <h3>Exploration of Machine Learning Attacks in Automotive Systems Using Physical and Mixed Reality Platforms</h3>
-
-    <p>
-        Developed a configurable exploration platform for studying adversarial
-        machine learning attacks on computer vision systems in autonomous vehicles.
-        Enables hands-on evaluation of evasion and image-perturbation attacks
-        on traffic sign recognition models using physical and mixed-reality setups.
-    </p>
-
-    <!-- Video Embed -->
-    <div style="margin: 20px 0;">
-        <iframe 
-            width="100%" 
-            height="315"
-            src="https://www.youtube.com/embed/UulfOM4oONI"
-            title="ML Attack Exploration Platform Demo"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-    <p>
-        <strong>Published in:</strong> 2023 IEEE International Conference on Consumer Electronics (ICCE)
-    </p>
-
-    <a href="ml-attacks.html">Read More →</a> |
-    <a href="https://ieeexplore.ieee.org/abstract/document/10043491" target="_blank">
-        View on IEEE Xplore
-    </a>
-</div>
-
-
-    
-
-    
-<div class="project">
-    <h3>IoT-Based Approach for Vehicular Health Monitoring</h3>
-
-    <p>
-        Designed a reliability and safety evaluation framework for monitoring
-        impending mechanical failures in drivetrain, suspension, and steering systems.
-        Enables real-time health reporting for autonomous vehicles and fleet operators.
-    </p>
-
-    <p>
-        <strong>Published in:</strong> 2025 IEEE International Conference on Consumer Electronics (ICCE)
-    </p>
-
-    <a href="veh-health.html">Read More →</a> |
-    <a href="https://ieeexplore.ieee.org/abstract/document/10930165" target="_blank">
-        View on IEEE Xplore
-    </a>
-</div>
-
-
-    
-    
-<div class="project">
-    <h3>MASC: Wearable Design for Infectious Disease Detection Through Machine Learning</h3>
-
-    <p>
-        Built a wearable health monitoring prototype for early infectious disease detection.
-        Led hardware design, PCB development, system integration, and validation testing, translating
-        requirements into measurable test procedures and verified performance.
-    </p>
-
-    <p>
-        <strong>My role:</strong> Hardware build • PCB design • Integration & testing • Requirements & verification
-    </p>
-
-    <a href="masc.html">Read More →</a>
-        <a href="https://ieeexplore.ieee.org/abstract/document/10870051" target="_blank">
-        View on IEEE Xplore
-    </a>
-    
-</div>
-
+</section>
 
 
 
