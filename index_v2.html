@@ -183,7 +183,6 @@
                   let currentIndex = 0; // Keeps track of which tile we are showing
                 
                   const tileImage = document.getElementById("tileImage"); // The <img> element
-                  const tileCounter = document.getElementById("tileCounter"); // The "1 / 6" label
                   const prevBtn = document.getElementById("prevBtn"); // Left arrow button
                   const nextBtn = document.getElementById("nextBtn"); // Right arrow button
                 
@@ -192,7 +191,6 @@
                   // =========================================
                   function renderTile() { // Function to refresh UI
                     tileImage.src = imageFiles[currentIndex]; // Set image to current file
-                    tileCounter.textContent = `${currentIndex + 1} / ${imageFiles.length}`; // Update counter text
                   } // End renderTile
                 
                   // =========================================
