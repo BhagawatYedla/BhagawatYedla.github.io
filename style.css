@@ -253,7 +253,7 @@ body {
 .meta-line { /* Org + dates line */
   display: flex; /* Horizontal row */
   align-items: center; /* Vertical center */
-  gap: 16px; /* Space between items >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+  gap: 20px; /* Space between items >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
   font-size: 30px; /* Smaller */
   color: #4b5563; /* Soft slate */
   margin: 0; /* Remove default */
