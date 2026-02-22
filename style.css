@@ -286,19 +286,16 @@ body {
 
 
 /* ========================================= */
-/* TILE FRAME (Image Container)              */
-/* Holds image + overlay arrow buttons       */
+/* TILE FRAME (REQUIRED FOR OVERLAY)         */
+/* Buttons are positioned relative to this   */
 /* ========================================= */
 
-.tile-frame { /* Frame for the image */
-  position: relative; /* REQUIRED: allows arrows to be absolutely positioned inside */
-  flex: 1; /* Take available vertical space */
-  border-radius: 16px; /* ✅ FILLET SIZE for image tile corners */
-  overflow: hidden; /* ✅ Ensures image + buttons stay inside rounded corners */
-  border: none; /* No border */
-  box-shadow: none; /* No shadow (keep none if you want flat look) */
-  background: #f9fafb; /* Light background behind image */
-} /* End .tile-frame */
+.tile-frame {
+  position: relative;     /* ✅ REQUIRED: anchors the absolute buttons */
+  overflow: hidden;       /* Keeps buttons inside rounded corners */
+  border-radius: 16px;    /* Fillet for the image tile */
+  height: 520px;          /* Give the tile a real height (adjust as needed) */
+}
 
 
 /* ========================================= */
