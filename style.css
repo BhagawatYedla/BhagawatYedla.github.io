@@ -142,167 +142,230 @@ body {
 
 
 
+
+
+
+
+
 /* ========================================= */
-/* EXPERIENCE SECTION LAYOUT                  */
-/* Two-column layout: text left, tiles right  */
+/* EXPERIENCE SECTION WRAPPER                */
 /* ========================================= */
 
-.experience { /* Main section */
-  padding: 120px 80px; /* Top/bottom and left/right spacing */
-  background: #ffffff; /* White background to match hero */
+.experience { /* Whole section */
+  padding: 120px 80px; /* Spacing around the section */
+  background: #ffffff; /* White background */
+  opacity: 0; /* Hidden before reveal */
+  transform: translateY(30px); /* Slightly shifted down before reveal */
+  transition: opacity 700ms ease, transform 700ms ease; /* Smooth reveal animation */
 } /* End .experience */
 
-.experience-container { /* Centers and constrains width */
-  max-width: 1200px; /* Limits content width */
-  margin: 0 auto; /* Centers the container */
-  display: grid; /* Uses grid for two columns */
-  grid-template-columns: 1.2fr 0.8fr; /* Left wider than right */
-  gap: 60px; /* Space between columns */
-  align-items: start; /* Align to top */
+.experience.reveal { /* Visible state after scroll reveal */
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move into place */
+} /* End .experience.reveal */
+
+.experience-container { /* Centers the tile on the page */
+  max-width: 1200px; /* Limit width */
+  margin: 0 auto; /* Center horizontally */
 } /* End .experience-container */
 
+
+
+
+
 /* ========================================= */
-/* LEFT SIDE (TEXT)                           */
+/* FORCE DESKTOP TWO-COLUMN LAYOUT           */
+/* Ensures text stays LEFT and images RIGHT  */
 /* ========================================= */
 
-.experience-left { /* Left column wrapper */
-  display: flex; /* Flex layout */
-  flex-direction: column; /* Stack items vertically */
-  gap: 24px; /* Space between heading and card */
-} /* End .experience-left */
+@media (min-width: 901px) { /* Applies only on desktop/wider screens */
+  .experience-tile { /* The main experience card */
+    display: grid; /* Use grid layout */
+    grid-template-columns: 0.85fr 1.15fr; /* Left text narrower, right image wider */
+    align-items: stretch; /* Same height columns */
+  } /* End .experience-tile */
+} /* End desktop media query */
 
-.experience-title { /* "Experience" heading */
-  font-size: 34px; /* Heading size */
-  font-weight: 800; /* Strong weight */
-  margin: 0; /* Remove default margin */
-  color: #111827; /* Deep slate */
-} /* End .experience-title */
 
-.experience-card { /* Card for one experience */
-  border: 1px solid #e5e7eb; /* Light border */
-  border-radius: 16px; /* Rounded corners */
-  padding: 28px; /* Inner spacing */
-  background: #ffffff; /* Card background */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06); /* Subtle premium shadow */
-} /* End .experience-card */
 
-.role-title { /* Role heading */
-  font-size: 22px; /* Role size */
+
+
+
+
+
+/* ========================================= */
+/* EXPERIENCE TILE (CARD)                     */
+/* Force equal-height columns + stretch       */
+/* ========================================= */
+
+.experience-tile { /* Main card */
+  display: grid; /* Two-column layout */
+  grid-template-columns: 0.85fr 1.15fr; /* Text left (narrow), images right (wide) */
+  gap: 28px; /* Space between columns */
+  border: 1px solid #e5e7eb; /* Border */
+  border-radius: 18px; /* Card fillet */
+  padding: 28px; /* Inner padding */
+  background: #ffffff; /* Background */
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08); /* Shadow */
+  align-items: stretch; /* ✅ IMPORTANT: stretch children to same height */
+} /* End .experience-tile */
+
+
+
+
+
+
+
+/* ========================================= */
+/* HARD FIX: CENTER TEXT IN LEFT COLUMN      */
+/* Uses GRID centering + !important to beat  */
+/* any earlier/later overrides.              */
+/* ========================================= */
+
+.experience-text {                 /* Left text column inside the tile */
+  height: 100% !important;         /* Forces the column to fill tile height */
+  display: grid !important;        /* Grid is very reliable for centering */
+  align-content: center !important;/* ✅ Vertically center the text block */
+  justify-items: start !important; /* Keep everything aligned to the left */
+  gap: 16px;                       /* Space between items */
+}
+
+
+
+/* ========================================= */
+/* EXPERIENCE SECTION TITLE (OUTSIDE TILE)  */
+/* ========================================= */
+
+.experience-title {
+  font-size: 34px;        /* Bigger section heading */
+  font-weight: 800;
+  margin-bottom: 40px;    /* Space between title and tile */
+  color: #111827;
+}
+
+.role-title { /* Role line */
+  font-size: 34px; /* Role size >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  */
   font-weight: 800; /* Bold */
-  margin: 0 0 12px 0; /* Space below */
+  margin: 0; /* Remove default margin */
   color: #111827; /* Deep slate */
 } /* End .role-title */
 
-.meta-line { /* UF • dates line */
-  display: flex; /* Horizontal layout */
-  align-items: center; /* Vertically center */
-  gap: 10px; /* Spacing between items */
-  font-size: 14px; /* Smaller text */
+.meta-line { /* Org + dates line */
+  display: flex; /* Horizontal row */
+  align-items: center; /* Vertical center */
+  gap: 20px; /* Space between items >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+  font-size: 30px; /* Smaller */
   color: #4b5563; /* Soft slate */
-  margin-bottom: 16px; /* Space below */
+  margin: 0; /* Remove default */
 } /* End .meta-line */
 
 .dot { /* Separator dot */
-  opacity: 0.7; /* Slightly softer */
+  opacity: 0.7; /* Slightly faded */
 } /* End .dot */
 
-.role-desc { /* Paragraph text */
+.role-desc { /* Description paragraph */
   margin: 0; /* Remove default margin */
-  font-size: 16px; /* Body size */
-  line-height: 1.65; /* Readable spacing */
-  color: #374151; /* Slightly darker than meta */
+  font-size: 26px; /* Slightly smaller to keep text compact */
+  line-height: 1.7; /* Readable */
+  color: #374151; /* Darker soft slate */
+  max-width: 42ch; /* IMPORTANT: keeps text narrow */
 } /* End .role-desc */
 
+
 /* ========================================= */
-/* RIGHT SIDE (TILE CAROUSEL)                 */
+/* RIGHT COLUMN (IMAGE CAROUSEL)             */
+/* Bigger image + same tile height as text   */
 /* ========================================= */
 
-.experience-right { /* Right column wrapper */
-  position: sticky; /* Keeps tiles visible while scrolling (nice UX) */
-  top: 110px; /* Distance from top when sticky */
-} /* End .experience-right */
+.experience-media { /* Media column wrapper */
+  display: flex; /* Stack image + controls */
+  flex-direction: column; /* Vertical stack */
+  justify-content: space-between; /* Controls stay near bottom */
+  gap: 14px; /* Spacing */
+  min-height: 420px; /* IMPORTANT: sets tile height baseline */
+} /* End .experience-media */
 
-.tile-frame { /* Image frame */
-  width: 100%; /* Full column width */
+.tile-frame { /* Frame for the image */
+  flex: 1; /* Take available vertical space */
   border-radius: 16px; /* Rounded corners */
   overflow: hidden; /* Crop overflow */
   border: 1px solid #e5e7eb; /* Light border */
-  box-shadow: 0 12px 34px rgba(0,0,0,0.10); /* Stronger shadow for the tile */
-  background: #f9fafb; /* Light backdrop */
+  box-shadow: 0 14px 38px rgba(0,0,0,0.12); /* Stronger image emphasis */
+  background: #f9fafb; /* Light background behind image */
 } /* End .tile-frame */
 
-.tile-frame img { /* Tile image */
-  width: 100%; /* Fit frame width */
-  height: 360px; /* Fixed height for consistent layout */
-  object-fit: cover; /* Crop nicely */
-  display: block; /* Avoid baseline spacing */
+.tile-frame img { /* Actual image */
+  width: 100%; /* Fill frame */
+  height: 100%; /* Fill frame height */
+  object-fit: cover; /* Crop nicely like a hero */
+  display: block; /* Remove inline gaps */
 } /* End .tile-frame img */
 
-.tile-controls { /* Row containing arrows + counter */
-  display: flex; /* Horizontal layout */
-  align-items: center; /* Vertically center */
-  justify-content: center; /* Center group */
+.tile-controls { /* Arrows + counter row */
+  display: flex; /* Horizontal */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
   gap: 14px; /* Spacing */
-  margin-top: 16px; /* Space above controls */
+  padding-top: 4px; /* Small top spacing */
 } /* End .tile-controls */
 
-.tile-btn { /* Arrow button */
-  border: 1px solid #e5e7eb; /* Light border */
-  background: #ffffff; /* White button */
-  padding: 10px 14px; /* Button spacing */
-  border-radius: 12px; /* Rounded corners */
+.tile-btn { /* Arrow buttons */
+  border: 1px solid #e5e7eb; /* Border */
+  background: #ffffff; /* White */
+  padding: 10px 14px; /* Button size */
+  border-radius: 12px; /* Rounded */
   font-size: 18px; /* Arrow size */
-  cursor: pointer; /* Hand cursor */
+  cursor: pointer; /* Pointer cursor */
   box-shadow: 0 8px 20px rgba(0,0,0,0.06); /* Soft shadow */
 } /* End .tile-btn */
 
-.tile-btn:hover { /* Hover effect */
+.tile-btn:hover { /* Hover lift */
   transform: translateY(-1px); /* Slight lift */
-} /* End .tile-btn:hover */
+} /* End hover */
 
-.tile-counter { /* "1 / 6" text */
-  font-size: 14px; /* Smaller text */
+.tile-counter { /* Counter text */
+  font-size: 14px; /* Small */
   color: #4b5563; /* Soft slate */
-  min-width: 60px; /* Prevent jumping as numbers change */
-  text-align: center; /* Center text */
+  min-width: 60px; /* Avoid layout shift */
+  text-align: center; /* Center */
 } /* End .tile-counter */
 
-/* ========================================= */
-/* SCROLL REVEAL ANIMATION                    */
-/* (JS will add .reveal when visible)         */
-/* ========================================= */
 
-.experience { /* Default hidden state before reveal */
-  opacity: 0; /* Start invisible */
-  transform: translateY(30px); /* Start slightly lower */
-  transition: opacity 700ms ease, transform 700ms ease; /* Smooth in */
-} /* End hidden state */
 
-.experience.reveal { /* Visible state when revealed */
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Move into place */
-} /* End revealed state */
+
+
 
 /* ========================================= */
-/* RESPONSIVE (Mobile)                        */
+/* RESPONSIVE (Mobile)                       */
 /* ========================================= */
 
-@media (max-width: 900px) { /* Mobile / smaller screens */
-  .experience { /* Reduce padding on smaller screens */
+@media (max-width: 650px) { /* Mobile layout */
+  .experience { /* Reduce outer padding */
     padding: 80px 20px; /* Smaller spacing */
   } /* End .experience */
 
-  .experience-container { /* Stack columns */
-    grid-template-columns: 1fr; /* One column */
-    gap: 30px; /* Less gap */
-  } /* End .experience-container */
+  .experience-tile { /* Stack text above image */
+    grid-template-columns: 1fr; /* Single column */
+  } /* End .experience-tile */
 
-  .experience-right { /* Disable sticky on mobile */
-    position: relative; /* Normal flow */
-    top: auto; /* Reset */
-  } /* End .experience-right */
+  .experience-media { /* Reduce min height */
+    min-height: 150px; /* Smaller height on mobile */
+  } /* End .experience-media */
 
-  .tile-frame img { /* Smaller fixed height */
-    height: 260px; /* Reduce tile height */
-  } /* End .tile-frame img */
+  .role-desc { /* Allow wider text on mobile */
+    max-width: 60ch; /* Wider for smaller screens */
+  } /* End .role-desc */
 } /* End media query */
+
+
+
+
+
+
+
+
+
+
+
+
+
