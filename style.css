@@ -217,20 +217,18 @@ body {
 
 
 /* ========================================= */
-/* TEXT COLUMN (VERTICAL CENTER FIX)          */
-/* Forces the text column to fill height      */
-/* then centers content vertically            */
+/* HARD FIX: CENTER TEXT IN LEFT COLUMN      */
+/* Uses GRID centering + !important to beat  */
+/* any earlier/later overrides.              */
 /* ========================================= */
 
-.experience-text { /* Left text column */
-  height: 100%; /* ✅ Fill full height of the grid cell */
-  min-height: 100%; /* ✅ Extra safety for some browsers */
-  display: flex; /* Enable flex layout */
-  flex-direction: column; /* Stack text items vertically */
-  justify-content: center; /* ✅ Center vertically */
-  align-items: flex-start; /* Keep left alignment */
-  gap: 16px; /* Spacing between lines */
-} /* End .experience-text */
+.experience-text {                 /* Left text column inside the tile */
+  height: 100% !important;         /* Forces the column to fill tile height */
+  display: grid !important;        /* Grid is very reliable for centering */
+  align-content: center !important;/* ✅ Vertically center the text block */
+  justify-items: start !important; /* Keep everything aligned to the left */
+  gap: 16px;                       /* Space between items */
+}
 
 
 
