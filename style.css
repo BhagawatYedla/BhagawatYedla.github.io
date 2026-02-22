@@ -301,74 +301,73 @@ body {
   display: block; /* Remove inline gaps */
 } /* End .tile-frame img */
 
-.tile-controls { /* Arrows + counter row */
-  display: flex; /* Horizontal */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  gap: 14px; /* Spacing */
-  padding-top: 4px; /* Small top spacing */
-} /* End .tile-controls */
+/* ========================================= */
+/* TILE CONTROLS ROW                         */
+/* Holds buttons + counter                   */
+/* ========================================= */
+
+.tile-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding-top: 4px;
+}
 
 /* ========================================= */
-/* CIRCULAR ARROW BUTTON STYLE               */
-/* Clean modern triangle arrows              */
+/* CIRCULAR ARROW BUTTONS                    */
 /* ========================================= */
 
 .tile-btn {
-  width: 42px;                 /* Circle size */
+  width: 42px;
   height: 42px;
-  border-radius: 50%;          /* Makes it circular */
-  border: 1px solid #e5e7eb;   /* Subtle border */
-  background: #ffffff;         /* White background */
-  display: flex;               /* Center triangle */
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* Hover effect (optional but nice) */
+/* Single hover rule (keep only one) */
 .tile-btn:hover {
   transform: translateY(-2px);
   background: #f9fafb;
 }
 
-
 /* ========================================= */
-/* TRIANGLE ARROW SHAPES (PURE CSS)         */
+/* TRIANGLE ARROWS (PURE CSS)                */
 /* ========================================= */
 
-/* LEFT ARROW */
+/* Left arrow triangle */
 .tile-btn.prev::before {
   content: "";
   width: 0;
   height: 0;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
-  border-right: 8px solid #111827;  /* Triangle color */
+  border-right: 8px solid #111827;
 }
 
-/* RIGHT ARROW */
+/* Right arrow triangle */
 .tile-btn.next::before {
   content: "";
   width: 0;
   height: 0;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
-  border-left: 8px solid #111827;   /* Triangle color */
+  border-left: 8px solid #111827;
 }
 
-
-.tile-btn:hover { /* Hover lift */
-  transform: translateY(-1px); /* Slight lift */
-} /* End hover */
-
-.tile-counter { /* Counter text */
-  font-size: 14px; /* Small */
-  color: #4b5563; /* Soft slate */
-  min-width: 60px; /* Avoid layout shift */
-  text-align: center; /* Center */
-} /* End .tile-counter */
+/* Counter text */
+.tile-counter {
+  font-size: 14px;
+  color: #4b5563;
+  min-width: 60px;
+  text-align: center;
+}
 
 
 
