@@ -136,3 +136,213 @@ body {
     line-height: 1.6;
     color: #4b5563;
 }
+
+
+
+
+
+
+/* ========================================= */
+/* EXPERIENCE SECTION                         */
+/* Each slide = full screen                   */
+/* ========================================= */
+
+.experience {
+  background: #ffffff;
+}
+
+/* Each slide fills the screen */
+.exp-slide {
+  min-height: 100vh;          /* Full screen height */
+  display: grid;              /* Two-column layout */
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  padding: 80px;
+  align-items: center;
+  border-top: 1px solid #e5e7eb; /* subtle separation between slides */
+}
+
+/* ========================================= */
+/* LEFT SIDE TEXT                             */
+/* ========================================= */
+
+.exp-left {
+  max-width: 720px;
+}
+
+.exp-kicker {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+.exp-title {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 12px 0;
+  color: #111827;
+}
+
+.exp-meta {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 18px;
+}
+
+.exp-dot {
+  margin: 0 10px;
+  color: #9ca3af;
+}
+
+.exp-desc {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0;
+}
+
+.exp-hint {
+  margin-top: 28px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ========================================= */
+/* RIGHT SIDE TILE CAROUSEL                   */
+/* ========================================= */
+
+.exp-right {
+  width: 100%;
+  max-width: 520px;
+  justify-self: end;          /* keep right column aligned to the right */
+}
+
+/* Header row: title + arrows */
+.tile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.tile-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+/* Arrow buttons */
+.tile-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.tile-btn {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tile-btn:hover {
+  background: #f9fafb;
+}
+
+/* ========================================= */
+/* FLIP TILE CARD                             */
+/* (We keep the flip styling so you can       */
+/* later flip for captions if you want)       */
+/* ========================================= */
+
+.tile-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;      /* Keeps tile consistent */
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.12);
+  perspective: 1200px;     /* Enables 3D flip effect */
+}
+
+/* Inner faces */
+.tile-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+/* Front side (image) */
+.tile-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Crops nicely like a tile */
+  display: block;
+}
+
+/* Back side (optional caption) */
+.tile-back {
+  background: #111827;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.tile-back-text {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* Indicator */
+.tile-indicator {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #6b7280;
+  text-align: right;
+}
+
+/* ========================================= */
+/* SCROLL "SLIDE IN" ANIMATION                */
+/* Slide appears when it enters viewport      */
+/* ========================================= */
+
+.exp-slide {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.exp-slide.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================= */
+/* RESPONSIVE (mobile)                        */
+/* Stack columns vertically                   */
+/* ========================================= */
+
+@media (max-width: 900px) {
+  .exp-slide {
+    grid-template-columns: 1fr;
+    padding: 50px 24px;
+  }
+  .exp-right {
+    justify-self: start;
+    max-width: 100%;
+  }
+  .hero-text {
+    left: 24px;  /* if you use hero from earlier */
+    bottom: 24px;
+    right: 24px;
+  }
+}
