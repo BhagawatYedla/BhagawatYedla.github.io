@@ -312,8 +312,8 @@ body {
 .tile-btn { /* Arrow buttons */
   border: 1px solid #e5e7eb; /* Border */
   background: #ffffff; /* White */
-  padding: 10px 14px; /* Button size */
-  border-radius: 12px; /* Rounded */
+  padding: 10px 10px; /* Button size */
+  border-radius: 5px; /* Rounded */
   font-size: 18px; /* Arrow size */
   cursor: pointer; /* Pointer cursor */
   box-shadow: 0 8px 20px rgba(0,0,0,0.06); /* Soft shadow */ /*    box-shadow: 0 8px 20px rgba(0,0,0,0.06); Soft shadow */
