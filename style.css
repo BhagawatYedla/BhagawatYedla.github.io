@@ -50,3 +50,12 @@ body {
     padding: 120px 80px;
     max-width: 1000px;
 }
+
+.logo a {
+    text-decoration: none;
+    color: #1f2937;
+}
+
+.logo a:hover {
+    color: #1e3a8a;
+}
