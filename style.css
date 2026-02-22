@@ -254,7 +254,7 @@ body {
   display: flex; /* Horizontal row */
   align-items: center; /* Vertical center */
   gap: 20px; /* Space between items >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-  font-size: 26px; /* Smaller */
+  font-size: 22px; /* Smaller */
   color: #4b5563; /* Soft slate */
   margin: 0; /* Remove default */
 } /* End .meta-line */
