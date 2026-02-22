@@ -104,10 +104,16 @@ body {
     transform: translate(-50%, -50%); /* Perfect center */
 }
 
+/* ========================================= */
+/* HERO IMAGE SIZE CONTROL                  */
+/* Increase max-width to make image larger  */
+/* ========================================= */
+
 .hero-image img {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
+    max-width: 950px;   /* Increase this value to enlarge image */
+    width: 100%;        /* Keeps image responsive */
+    height: auto;       /* Maintains aspect ratio */
+    display: block;
 }
 
 /* ========================================= */
