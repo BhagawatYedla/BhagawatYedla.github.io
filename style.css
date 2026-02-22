@@ -363,17 +363,6 @@ body {
 }
 
 
-/* ========================================= */
-/* TILE COUNTER (Below Image)                */
-/* ========================================= */
-
-.tile-counter { /* Counter text */
-  font-size: 14px; /* Counter size */
-  color: #4b5563; /* Soft slate */
-  min-width: 60px; /* Prevent layout jump */
-  text-align: center; /* Center text */
-  margin: 0 auto; /* Center horizontally */
-} /* End .tile-counter */
 
 
 
