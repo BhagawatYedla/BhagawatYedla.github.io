@@ -170,6 +170,29 @@ body {
 } /* End .experience-container */
 
 
+
+
+
+/* ========================================= */
+/* FORCE DESKTOP TWO-COLUMN LAYOUT           */
+/* Ensures text stays LEFT and images RIGHT  */
+/* ========================================= */
+
+@media (min-width: 901px) { /* Applies only on desktop/wider screens */
+  .experience-tile { /* The main experience card */
+    display: grid; /* Use grid layout */
+    grid-template-columns: 0.85fr 1.15fr; /* Left text narrower, right image wider */
+    align-items: stretch; /* Same height columns */
+  } /* End .experience-tile */
+} /* End desktop media query */
+
+
+
+
+
+
+
+
 /* ========================================= */
 /* EXPERIENCE TILE (Single Card)             */
 /* Text left + Image right INSIDE SAME TILE  */
@@ -299,7 +322,7 @@ body {
 /* RESPONSIVE (Mobile)                       */
 /* ========================================= */
 
-@media (max-width: 900px) { /* Mobile layout */
+@media (max-width: 650px) { /* Mobile layout */
   .experience { /* Reduce outer padding */
     padding: 80px 20px; /* Smaller spacing */
   } /* End .experience */
