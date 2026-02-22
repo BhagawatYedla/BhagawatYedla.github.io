@@ -310,7 +310,7 @@ body {
 } /* End .tile-controls */
 
 .tile-btn { /* Arrow buttons */
-  border: 1px solid #e5e7eb; /* Border */
+  border: none #e5e7eb; /* Border */
   background: #ffffff; /* White */
   padding: 10px 10px; /* Button size */
   border-radius: 5px; /* Rounded */
