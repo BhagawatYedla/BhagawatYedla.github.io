@@ -75,79 +75,118 @@
 
 
 
-    <!-- ========================================= -->
-    <!-- EXPERIENCE SECTION                       -->
-    <!-- Section title OUTSIDE the experience tile -->
-    <!-- ========================================= -->
-    
-    <section class="experience" id="experience"> <!-- Section wrapper -->
-    
-      <div class="experience-container"> <!-- Centers everything -->
-    
-        <!-- ========================================= -->
-        <!-- SECTION TITLE (OUTSIDE THE TILE)          -->
-        <!-- ========================================= -->
-        <h2 class="experience-title">Experience</h2>
-    
-        <!-- ========================================= -->
-        <!-- EXPERIENCE TILE (Card)                    -->
-        <!-- ========================================= -->
-        <div class="experience-tile"> <!-- Main card -->
-    
-          <!-- LEFT COLUMN: TEXT -->
-          <div class="experience-text">
-    
-            <h3 class="role-title">Graduate Research Assistant</h3>
-    
-            <div class="meta-line">
-              <span class="org">University of Florida</span>
-              <span class="dot">•</span>
-              <span class="dates">2021 - Present</span>
-            </div>
-    
-            <p class="role-desc">
-                Architected and experimentally validated a patent-pending scaled autonomous vehicle platform to 
-                analyze, model and test autonomy, vehicle dynamics, and communication layers 
-                under nominal and adversarial conditions.
-            </p>
-    
-          </div> <!-- End experience-text -->
-    
-          <!-- RIGHT COLUMN: IMAGE -->
-          <div class="experience-media">
-    
             <!-- ========================================= -->
-            <!-- IMAGE FRAME WITH OVERLAY CONTROLS        -->
+            <!-- EXPERIENCE SECTION                        -->
+            <!-- Section title OUTSIDE the experience tile -->
             <!-- ========================================= -->
             
-                <div class="tile-frame">
-                  <img id="tileImage" src="assets/experience_6.0.png" alt="Experience Tile Image">
-                
+            <section class="experience" id="experience"> <!-- Section wrapper -->
+            
+              <div class="experience-container"> <!-- Centers everything -->
+            
+                <!-- ========================================= -->
+                <!-- SECTION TITLE (OUTSIDE THE TILE)          -->
+                <!-- ========================================= -->
+                <h2 class="experience-title">Experience</h2>
+            
+                <!-- ========================================= -->
+                <!-- EXPERIENCE TILE (Card)                    -->
+                <!-- ========================================= -->
+                <div class="experience-tile"> <!-- Main card -->
+            
                   <!-- ========================================= -->
-                  <!-- BOTTOM CENTER ARROW CONTROLS              -->
+                  <!-- LEFT COLUMN: TEXT                         -->
                   <!-- ========================================= -->
-                  <div class="tile-overlay-controls">
-                    <button class="tile-btn prev" id="prevBtn" aria-label="Previous"></button>
-                    <button class="tile-btn next" id="nextBtn" aria-label="Next"></button>
-                  </div>
-                
+                  <div class="experience-text">
+            
+                    <h3 class="role-title">Graduate Research Assistant</h3>
+            
+                    <div class="meta-line">
+                      <span class="org">University of Florida</span>
+                      <span class="dot">•</span>
+                      <span class="dates">2021 - Present</span>
+                    </div>
+            
+                    <p class="role-desc">
+                      Architected and experimentally validated a patent-pending scaled autonomous vehicle platform to
+                      analyze, model and test autonomy, vehicle dynamics, and communication layers
+                      under nominal and adversarial conditions.
+                    </p>
+            
+                    <!-- ========================================= -->
+                    <!-- LEARN MORE BUTTON (Opens Modal Popup)      -->
+                    <!-- ========================================= -->
+                    <button class="learn-more-btn" id="learnMoreBtn" type="button">
+                      Learn More
+                    </button>
+            
+                  </div> <!-- End experience-text -->
+            
+                  <!-- ========================================= -->
+                  <!-- RIGHT COLUMN: IMAGE + OVERLAY ARROWS       -->
+                  <!-- ========================================= -->
+                  <div class="experience-media">
+            
+                    <div class="tile-frame">
+                      <img id="tileImage" src="assets/experience_6.0.png" alt="Experience Tile Image">
+            
+                      <!-- Bottom Center Arrow Controls (inside image) -->
+                      <div class="tile-overlay-controls">
+                        <button class="tile-btn prev" id="prevBtn" aria-label="Previous"></button>
+                        <button class="tile-btn next" id="nextBtn" aria-label="Next"></button>
+                      </div>
+            
+                    </div> <!-- End tile-frame -->
+            
+                  </div> <!-- End experience-media -->
+            
+                </div> <!-- End experience-tile -->
+            
+              </div> <!-- End experience-container -->
+            
+            </section> <!-- End experience section -->
+
+
+
+    
+
+
+            <!-- ========================================= -->
+            <!-- MODAL POPUP (Overlapping window)          -->
+            <!-- Occupies ~75% of the screen               -->
+            <!-- Hidden by default                          -->
+            <!-- ========================================= -->
+            
+            <div class="modal-overlay" id="experienceModal" aria-hidden="true">
+            
+              <!-- Modal window -->
+              <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            
+                <!-- Header row: title + close button -->
+                <div class="modal-header">
+                  <h3 class="modal-title" id="modalTitle">Graduate Research Assistant — Details</h3>
+            
+                  <!-- Close button -->
+                  <button class="modal-close" id="modalCloseBtn" type="button" aria-label="Close">
+                    ✕
+                  </button>
                 </div>
-                
-                <!-- <div class="tile-counter" id="tileCounter">1 / 6</div> -->
-    
-          </div> <!-- End experience-media -->
-    
-        </div> <!-- End experience-tile -->
-    
-      </div> <!-- End experience-container -->
-    
-    </section>
-
-
-
-
-
-
+            
+                <!-- Main modal content -->
+                <div class="modal-body">
+                  <p>
+                    Add your detailed content here (methods, architecture, validation, results, publications, etc.).
+                  </p>
+            
+                  <ul>
+                    <li>Requirements & validation plan definition for safety/security experiments.</li>
+                    <li>RTOS-based steer-by-wire + torque vectoring control integration.</li>
+                    <li>Fault-injection experiments on safety-critical components.</li>
+                  </ul>
+                </div>
+            
+              </div>
+            </div>
 
 
 
