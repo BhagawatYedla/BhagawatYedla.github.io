@@ -309,7 +309,7 @@ body {
   } /* End .experience-tile */
 
   .experience-media { /* Reduce min height */
-    min-height: 300px; /* Smaller height on mobile */
+    min-height: 150px; /* Smaller height on mobile */
   } /* End .experience-media */
 
   .role-desc { /* Allow wider text on mobile */
