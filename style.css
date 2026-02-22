@@ -83,39 +83,32 @@ body {
 
 
 /* ========================================= */
-/* HERO SECTION BASE                        */
+/* HERO SECTION BASE                          */
+/* Full screen hero + positioning context     */
 /* ========================================= */
 
 .hero {
-    position: relative;      /* Needed for absolute positioning */
-    height: 100vh;           /* Full screen height */
-    background: #ffffff;
-    overflow: hidden;
+  position: relative;     /* Allows absolute children inside */
+  height: 100vh;          /* Full viewport height */
+  background: #ffffff;
+  overflow: hidden;       /* Crops image if it spills out */
 }
 
 /* ========================================= */
-/* CENTER IMAGE                             */
+/* HERO IMAGE AS BACKGROUND LAYER             */
+/* - Positioned behind text using z-index     */
+/* - Oversized using width/height percentages */
 /* ========================================= */
 
 .hero-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Perfect center */
+  position: absolute;
+  inset: 0;               /* top:0 right:0 bottom:0 left:0 (fills hero) */
+  z-index: 0;             /* Behind the text layer */
+  display: flex;
+  align-items: center;    /* Centers image vertically */
+  justify-content: center;/* Centers image horizontally */
 }
 
-/* ========================================= */
-/* HERO IMAGE SIZE (FORCES UPSCALING)        */
-/* If max-width changes don't work, set      */
-/* width directly using px or vw.            */
-/* ========================================= */
-
-.hero-image img {
-    width: 100vw;        /* <-- Makes it scale with screen width (try 60vw–80vw) */
-    max-width: 1200px;  /* <-- Upper limit so it doesn't get ridiculous on big screens */
-    height: auto;       /* Keeps aspect ratio correct */
-    display: block;     /* Removes inline image spacing quirks */
-}
 
 /* ========================================= */
 /* BOTTOM LEFT TEXT                         */
