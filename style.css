@@ -342,3 +342,106 @@ body {
     max-width: 60ch;                /* Allow wider text on small screens */
   }
 }
+
+
+
+
+
+
+            /* ========================================= */
+            /* LEARN MORE BUTTON                          */
+            /* ========================================= */
+            
+            .learn-more-btn {
+              margin-top: 18px;
+              padding: 12px 18px;
+              border-radius: 12px;
+              border: 1px solid #e5e7eb;
+              background: #111827;
+              color: #ffffff;
+              font-weight: 700;
+              cursor: pointer;
+              transition: transform 0.2s ease, opacity 0.2s ease;
+            }
+            
+            .learn-more-btn:hover {
+              transform: translateY(-1px);
+              opacity: 0.92;
+            }
+            
+            /* ========================================= */
+            /* MODAL OVERLAY BACKDROP                     */
+            /* ========================================= */
+            
+            .modal-overlay {
+              position: fixed;
+              inset: 0;
+              background: rgba(0,0,0,0.55);
+              display: none;              /* Hidden by default */
+              align-items: center;
+              justify-content: center;
+              z-index: 9999;
+              padding: 20px;
+            }
+            
+            /* When open */
+            .modal-overlay.is-open {
+              display: flex;
+            }
+            
+            /* ========================================= */
+            /* MODAL WINDOW (75% of screen)               */
+            /* ========================================= */
+            
+            .modal-window {
+              width: 75vw;                 /* 75% of screen width */
+              height: 75vh;                /* 75% of screen height */
+              background: #ffffff;
+              border-radius: 18px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+            }
+            
+            /* Header */
+            .modal-header {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 18px;
+              border-bottom: 1px solid #e5e7eb;
+            }
+            
+            .modal-title {
+              margin: 0;
+              font-size: 18px;
+              font-weight: 800;
+              color: #111827;
+            }
+            
+            /* Close button */
+            .modal-close {
+              width: 36px;
+              height: 36px;
+              border-radius: 12px;
+              border: 1px solid #e5e7eb;
+              background: #ffffff;
+              cursor: pointer;
+              font-size: 16px;
+            }
+            
+            /* Body */
+            .modal-body {
+              padding: 18px;
+              overflow: auto;              /* Scroll if content is long */
+              color: #374151;
+              line-height: 1.7;
+            }
+            
+            /* Responsive */
+            @media (max-width: 900px) {
+              .modal-window {
+                width: 92vw;
+                height: 80vh;
+              }
+            }
