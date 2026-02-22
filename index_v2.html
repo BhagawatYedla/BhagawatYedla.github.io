@@ -268,7 +268,52 @@
 
 
 
-
+                <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                
+                  // ---------- Modal elements ----------
+                  const learnMoreBtn = document.getElementById("learnMoreBtn"); // Button that opens modal
+                  const modal = document.getElementById("experienceModal");     // Overlay
+                  const closeBtn = document.getElementById("modalCloseBtn");    // Close button
+                
+                  // ---------- Open modal ----------
+                  function openModal() {
+                    if (!modal) return;
+                    modal.classList.add("is-open");
+                    modal.setAttribute("aria-hidden", "false");
+                  }
+                
+                  // ---------- Close modal ----------
+                  function closeModal() {
+                    if (!modal) return;
+                    modal.classList.remove("is-open");
+                    modal.setAttribute("aria-hidden", "true");
+                  }
+                
+                  // Open modal on click
+                  if (learnMoreBtn) {
+                    learnMoreBtn.addEventListener("click", openModal);
+                  }
+                
+                  // Close modal on X click
+                  if (closeBtn) {
+                    closeBtn.addEventListener("click", closeModal);
+                  }
+                
+                  // Close modal if clicking outside the window (backdrop)
+                  if (modal) {
+                    modal.addEventListener("click", function (e) {
+                      if (e.target === modal) closeModal();
+                    });
+                  }
+                
+                  // Close modal on Escape key
+                  document.addEventListener("keydown", function (e) {
+                    if (e.key === "Escape") closeModal();
+                  });
+                
+                });
+                </script>
 
 
 
