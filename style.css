@@ -83,37 +83,56 @@ body {
 
 
 /* ========================================= */
-/* HERO SECTION STYLING                     */
-/* Premium centered landing section          */
+/* HERO SECTION BASE                        */
 /* ========================================= */
 
 .hero {
-    height: 80vh;                 /* Makes section occupy most of screen */
-    display: flex;                /* Enables vertical centering */
-    align-items: center;          /* Vertically center content */
-    justify-content: center;      /* Horizontally center content */
-    text-align: center;           /* Center text */
-    padding: 0 40px;              /* Side spacing */
-    background: #ffffff;          /* Clean white background */
+    position: relative;      /* Needed for absolute positioning */
+    height: 100vh;           /* Full screen height */
+    background: #ffffff;
+    overflow: hidden;
 }
 
-/* Container that limits text width for readability */
-.hero-content {
-    max-width: 900px;
+/* ========================================= */
+/* CENTER IMAGE                             */
+/* ========================================= */
+
+.hero-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfect center */
 }
 
-/* Main headline styling */
-.hero-title {
-    font-size: 46px;              /* Strong visual presence */
-    font-weight: 800;             /* Extra bold */
+.hero-image img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+}
+
+/* ========================================= */
+/* BOTTOM LEFT TEXT                         */
+/* ========================================= */
+
+.hero-text {
+    position: absolute;
+    bottom: 80px;       /* Distance from bottom */
+    left: 80px;         /* Distance from left */
+    max-width: 650px;   /* Controls text width */
+}
+
+/* Headline styling */
+.hero-text h1 {
+    font-size: 42px;
+    font-weight: 800;
     line-height: 1.2;
-    margin-bottom: 30px;          /* Space below headline */
-    color: #111827;               /* Deep slate tone */
+    margin-bottom: 25px;
+    color: #111827;
 }
 
 /* Supporting paragraph styling */
-.hero-subtitle {
-    font-size: 20px;
+.hero-text p {
+    font-size: 18px;
     line-height: 1.6;
-    color: #4b5563;               /* Softer secondary text */
+    color: #4b5563;
 }
