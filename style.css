@@ -213,15 +213,17 @@ body {
 
 
 /* ========================================= */
-/* LEFT COLUMN (TEXT)                        */
+/* LEFT COLUMN TEXT ALIGNMENT FIX            */
+/* Centers text vertically inside tile       */
 /* ========================================= */
 
-.experience-text { /* Text column wrapper */
-  display: flex; /* Flex layout */
-  flex-direction: column; /* Stack items vertically */
-  justify-content: flex-end; /* Push content toward bottom (nice balance) */
-  gap: 16px; /* Spacing between text elements */
-} /* End .experience-text */
+.experience-text {
+  display: flex;              /* Enable flex layout */
+  flex-direction: column;     /* Stack text elements vertically */
+  justify-content: center;    /* ✅ Center vertically */
+  align-items: flex-start;    /* Keep text aligned left */
+  gap: 16px;                  /* Space between text elements */
+}
 
 /* ========================================= */
 /* EXPERIENCE SECTION TITLE (OUTSIDE TILE)  */
