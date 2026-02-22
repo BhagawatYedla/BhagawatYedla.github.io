@@ -274,101 +274,124 @@ body {
 
 /* ========================================= */
 /* RIGHT COLUMN (IMAGE CAROUSEL)             */
-/* Bigger image + same tile height as text   */
+/* Image tile + overlay arrow controls       */
 /* ========================================= */
 
 .experience-media { /* Media column wrapper */
-  display: flex; /* Stack image + controls */
+  display: flex; /* Stack image + counter vertically */
   flex-direction: column; /* Vertical stack */
-  justify-content: space-between; /* Controls stay near bottom */
-  gap: 14px; /* Spacing */
-  min-height: 420px; /* IMPORTANT: sets tile height baseline */
+  gap: 12px; /* Space between image and counter */
+  min-height: 420px; /* Baseline height for the media column */
 } /* End .experience-media */
 
+
+/* ========================================= */
+/* TILE FRAME (Image Container)              */
+/* Holds image + overlay arrow buttons       */
+/* ========================================= */
+
 .tile-frame { /* Frame for the image */
+  position: relative; /* REQUIRED: allows arrows to be absolutely positioned inside */
   flex: 1; /* Take available vertical space */
-  border-radius: 16px; /* Rounded corners ---------------------------------------- ROUNDED CORNERS IMAGE TILE*/
-  overflow: hidden; /* Crop overflow */
-  border: none; /* Light border */
-  box-shadow: none; /* Stronger image emphasis */ /*box-shadow: 0 14px 38px rgba(0,0,0,0.12); /* Stronger image emphasis */
+  border-radius: 16px; /* ✅ FILLET SIZE for image tile corners */
+  overflow: hidden; /* ✅ Ensures image + buttons stay inside rounded corners */
+  border: none; /* No border */
+  box-shadow: none; /* No shadow (keep none if you want flat look) */
   background: #f9fafb; /* Light background behind image */
 } /* End .tile-frame */
 
+
+/* ========================================= */
+/* TILE IMAGE                                */
+/* ========================================= */
+
 .tile-frame img { /* Actual image */
-  width: 100%; /* Fill frame */
+  width: 100%; /* Fill frame width */
   height: 100%; /* Fill frame height */
-  object-fit: cover; /* Crop nicely like a hero */
-  display: block; /* Remove inline gaps */
+  object-fit: cover; /* Crop nicely while filling the frame */
+  display: block; /* Remove inline image gaps */
 } /* End .tile-frame img */
 
-/* ========================================= */
-/* TILE CONTROLS ROW                         */
-/* Holds buttons + counter                   */
-/* ========================================= */
-
-.tile-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  padding-top: 4px;
-}
 
 /* ========================================= */
-/* CIRCULAR ARROW BUTTONS                    */
+/* OVERLAY ARROW BUTTONS (Inside Image)      */
+/* Positioned left/right, centered vertically */
 /* ========================================= */
 
-.tile-btn {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-  display: flex;
+.tile-btn { /* Shared button style */
+  position: absolute; /* ✅ Overlay inside image */
+  top: 50%; /* Vertically centered */
+  transform: translateY(-50%); /* Perfect center alignment */
+  width: 32px; /* ✅ Circle size (adjust) */
+  height: 32px; /* Must match width */
+  border-radius: 50%; /* Circular */
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Subtle border for contrast */
+  background: rgba(0, 0, 0, 0.28); /* Semi-transparent dark background */
+  backdrop-filter: blur(4px); /* Soft “glass” effect (works in modern browsers) */
+  display: flex; /* Center the triangle */
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 2; /* Keep arrows above the image */
+} /* End .tile-btn */
 
-/* Single hover rule (keep only one) */
+
+/* Left arrow position */
+.tile-btn.prev {
+  left: 12px; /* Distance from left edge of image */
+} /* End .tile-btn.prev */
+
+/* Right arrow position */
+.tile-btn.next {
+  right: 12px; /* Distance from right edge of image */
+} /* End .tile-btn.next */
+
+
+/* Hover effect */
 .tile-btn:hover {
-  transform: translateY(-2px);
-  background: #f9fafb;
-}
+  background: rgba(0, 0, 0, 0.45); /* Darken slightly on hover */
+  transform: translateY(-50%) scale(1.03); /* Small pop effect while keeping centered */
+} /* End hover */
+
 
 /* ========================================= */
 /* TRIANGLE ARROWS (PURE CSS)                */
+/* White triangles for visibility on image   */
 /* ========================================= */
 
 /* Left arrow triangle */
 .tile-btn.prev::before {
-  content: "";
+  content: ""; /* Required to draw the triangle */
   width: 0;
   height: 0;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
-  border-right: 8px solid #111827;
-}
+  border-right: 8px solid #ffffff; /* White triangle */
+} /* End left triangle */
 
 /* Right arrow triangle */
 .tile-btn.next::before {
-  content: "";
+  content: ""; /* Required to draw the triangle */
   width: 0;
   height: 0;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
-  border-left: 8px solid #111827;
-}
+  border-left: 8px solid #ffffff; /* White triangle */
+} /* End right triangle */
 
-/* Counter text */
-.tile-counter {
-  font-size: 14px;
-  color: #4b5563;
-  min-width: 60px;
-  text-align: center;
-}
 
+/* ========================================= */
+/* TILE COUNTER (Below Image)                */
+/* ========================================= */
+
+.tile-counter { /* Counter text */
+  font-size: 14px; /* Counter size */
+  color: #4b5563; /* Soft slate */
+  min-width: 60px; /* Prevent layout jump */
+  text-align: center; /* Center text */
+  margin: 0 auto; /* Center horizontally */
+} /* End .tile-counter */
 
 
 
