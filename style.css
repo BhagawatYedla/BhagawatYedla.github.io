@@ -213,7 +213,7 @@ body {
   align-items: center;              /* Vertical alignment */
   gap: 16px;                        /* Space between pieces */
   font-size: 26px;                  /* Balanced size */
-  font-weight: 400;                 /* Slightly thicker than default */
+  font-weight: 500;                 /* Slightly thicker than default */
   color: #1f2937;                   /* Darker text */
   margin: 0;                        /* Remove default margin */
 }
