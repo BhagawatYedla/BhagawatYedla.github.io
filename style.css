@@ -1,410 +1,337 @@
-/* =========================================
-   1️⃣ GLOBAL RESET (Removes default browser spacing)
-========================================= */
+/* =========================================================
+   1) GLOBAL RESET
+   Removes default browser spacing and makes sizing predictable
+========================================================= */
 * {
-    margin: 0;                                     /* Removes default margin */
-    padding: 0;                                    /* Removes default padding */
-    box-sizing: border-box;                        /* Makes layout sizing predictable */
+  margin: 0;                  /* Remove default margins */
+  padding: 0;                 /* Remove default padding */
+  box-sizing: border-box;     /* Include padding/border in width/height */
 }
 
 
-/* =========================================
-   2️⃣ BODY STYLING (Applies to entire website)
-========================================= */
+/* =========================================================
+   2) BASE / BODY STYLES
+========================================================= */
 body {
-    font-family: "Inter", Arial, sans-serif;        /* Main font for whole site */
-    background-color: #f0f0f0;                      /* Light grey background */
-    color: #1f2937;                                 /* Default text color */
+  font-family: "Inter", Arial, sans-serif;  /* Primary site font */
+  background-color: #f0f0f0;                /* Light grey page background */
+  color: #1f2937;                           /* Default text color */
 }
 
 
-/* =========================================
-   3️⃣ NAVIGATION BAR CONTAINER
-========================================= */
+/* =========================================================
+   3) NAVIGATION BAR
+   Fixed header with left logo + right links
+========================================================= */
 .navbar {
-    position: fixed;                                 /* Keeps navbar fixed at top */
-    top: 0;                                          /* Stick to very top */
-    width: 100%;                                     /* Full width */
-    background-color: #ffffff;                       /* White background */
-    border-bottom: 1px solid #ddd;                   /* Light divider line */
-    display: flex;                                   /* Horizontal layout */
-    justify-content: space-between;                  /* Push left/right apart */
-    align-items: center;                             /* Vertical alignment */
-    padding: 15px 60px;                              /* Space inside navbar */
-    z-index: 1000;                                   /* Keeps navbar above content */
+  position: fixed;            /* Stick to top while scrolling */
+  top: 0;                     /* Align to very top */
+  width: 100%;                /* Full width bar */
+  background-color: #ffffff;  /* White background */
+  border-bottom: 1px solid #ddd; /* Subtle divider line */
+
+  display: flex;              /* Horizontal layout */
+  justify-content: space-between; /* Push left/right apart */
+  align-items: center;        /* Vertically center items */
+
+  padding: 15px 60px;         /* Inner spacing */
+  z-index: 1000;              /* Ensure it stays above content */
 }
 
-
-/* =========================================
-   4️⃣ LOGO TEXT (Your name on left)
-========================================= */
+/* Logo text (your name) */
 .navbar .logo {
-    font-size: 20px;                                  /* Logo size */
-    font-weight: bold;                                /* Bold text */
+  font-size: 20px;            /* Logo font size */
+  font-weight: bold;          /* Emphasize */
 }
 
-
-/* =========================================
-   5️⃣ NAVIGATION LINKS (Right side)
-========================================= */
-.navbar .nav-links a {
-    text-decoration: none;                             /* Removes underline */
-    color: #1f2937;                                    /* Default link color */
-    margin-left: 30px;                                 /* Space between links */
-    font-weight: 500;                                  /* Medium weight */
-    transition: 0.2s ease;                             /* Smooth hover animation */
-}
-
-.navbar .nav-links a:hover {
-    color: #1e3a8a;                                    /* Dark blue on hover */
-}
-
-
-/* =========================================
-   6️⃣ MAIN PAGE CONTENT CONTAINER
-========================================= */
-.content {
-    padding: 120px 80px;                               /* Top padding to avoid fixed navbar */
-    max-width: 1000px;                                 /* Limits content width */
-}
-
-
-/* =========================================
-   7️⃣ LOGO LINK STYLING
-========================================= */
+/* Logo link */
 .logo a {
-    text-decoration: none;                             /* No underline */
-    color: #1f2937;                                    /* Same color as text */
+  text-decoration: none;      /* Remove underline */
+  color: #1f2937;             /* Default link color */
 }
 
 .logo a:hover {
-    color: #1e3a8a;                                    /* Blue on hover */
+  color: #1e3a8a;             /* Blue on hover */
+}
+
+/* Nav links */
+.navbar .nav-links a {
+  text-decoration: none;      /* Remove underline */
+  color: #1f2937;             /* Default link color */
+  margin-left: 30px;          /* Space between links */
+  font-weight: 500;           /* Medium weight */
+  transition: 0.2s ease;      /* Smooth hover */
+}
+
+.navbar .nav-links a:hover {
+  color: #1e3a8a;             /* Dark blue on hover */
 }
 
 
-/* ========================================= */
-/* HERO SECTION BASE                          */
-/* Full screen hero + positioning context     */
-/* ========================================= */
+/* =========================================================
+   4) MAIN PAGE CONTENT WRAPPER
+   Adds top padding to compensate for fixed navbar
+========================================================= */
+.content {
+  padding: 120px 80px;        /* Space from top + side padding */
+  max-width: 1000px;          /* Limit content width (center via parent if used) */
+}
 
+
+/* =========================================================
+   5) HERO SECTION
+   Full-width hero with background image layer + bottom-left text
+========================================================= */
 .hero {
-  position: relative;     /* Allows absolute children inside */
-  height: 70vh;          /* Full viewport height */
-  background: #ffffff;
-  overflow: hidden;       /* Crops image if it spills out */
+  position: relative;         /* Anchor absolute children */
+  height: 70vh;               /* Hero height (not full screen) */
+  background: #ffffff;        /* White base */
+  overflow: hidden;           /* Crop overflowing image */
 }
 
-/* ========================================= */
-/* HERO IMAGE AS BACKGROUND LAYER             */
-/* - Positioned behind text using z-index     */
-/* - Oversized using width/height percentages */
-/* ========================================= */
-
+/* Background image layer container */
 .hero-image {
-  position: absolute;
-  inset: 0;               /* top:0 right:0 bottom:0 left:0 (fills hero) */
-  z-index: 0;             /* Behind the text layer */
-  display: flex;
-  align-items: center;    /* Centers image vertically */
-  justify-content: center;/* Centers image horizontally */
+  position: absolute;         /* Fill the hero */
+  inset: 0;                   /* top/right/bottom/left = 0 */
+  z-index: 0;                 /* Behind text */
+  display: flex;              /* Use flex for centering image if needed */
+  align-items: center;        /* Vertical center */
+  justify-content: center;    /* Horizontal center */
 }
 
-
-/* ========================================= */
-/* BOTTOM LEFT TEXT                         */
-/* ========================================= */
-
+/* Bottom-left text block */
 .hero-text {
-    position: absolute;
-    bottom: 80px;       /* Distance from bottom */
-    left: 80px;         /* Distance from left */
-    max-width: 650px;   /* Controls text width */
+  position: absolute;         /* Place over hero image */
+  bottom: 80px;               /* Distance from bottom edge */
+  left: 80px;                 /* Distance from left edge */
+  max-width: 650px;           /* Limit line length */
+  z-index: 1;                 /* Above image layer */
 }
 
-/* Headline styling */
+/* Hero headline */
 .hero-text h1 {
-    font-size: 42px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 25px;
-    color: #111827;
+  font-size: 42px;            /* Headline size */
+  font-weight: 800;           /* Strong emphasis */
+  line-height: 1.2;           /* Tight line spacing */
+  margin-bottom: 25px;        /* Space under headline */
+  color: #111827;             /* Near-black */
 }
 
-/* Supporting paragraph styling */
+/* Hero supporting text */
 .hero-text p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #4b5563;
+  font-size: 18px;            /* Body size */
+  line-height: 1.6;           /* Readable spacing */
+  color: #4b5563;             /* Muted slate */
 }
 
 
+/* =========================================================
+   6) EXPERIENCE SECTION
+   Reveal animation + container + tile layout
+========================================================= */
+.experience {
+  padding: 120px 80px;        /* Section spacing */
+  background: #ffffff;        /* White section background */
 
-
-
-
-
-
-
-
-
-/* ========================================= */
-/* EXPERIENCE SECTION WRAPPER                */
-/* ========================================= */
-
-.experience { /* Whole section */
-  padding: 120px 80px; /* Spacing around the section */
-  background: #ffffff; /* White background */
-  opacity: 0; /* Hidden before reveal */
-  transform: translateY(30px); /* Slightly shifted down before reveal */
-  transition: opacity 700ms ease, transform 700ms ease; /* Smooth reveal animation */
-} /* End .experience */
-
-.experience.reveal { /* Visible state after scroll reveal */
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Move into place */
-} /* End .experience.reveal */
-
-.experience-container { /* Centers the tile on the page */
-  max-width: 1200px; /* Limit width */
-  margin: 0 auto; /* Center horizontally */
-} /* End .experience-container */
-
-
-
-
-
-/* ========================================= */
-/* FORCE DESKTOP TWO-COLUMN LAYOUT           */
-/* Ensures text stays LEFT and images RIGHT  */
-/* ========================================= */
-
-@media (min-width: 901px) { /* Applies only on desktop/wider screens */
-  .experience-tile { /* The main experience card */
-    display: grid; /* Use grid layout */
-    grid-template-columns: 0.85fr 1.15fr; /* Left text narrower, right image wider */
-    align-items: stretch; /* Same height columns */
-  } /* End .experience-tile */
-} /* End desktop media query */
-
-
-
-
-
-
-
-
-/* ========================================= */
-/* EXPERIENCE TILE (CARD)                     */
-/* Force equal-height columns + stretch       */
-/* ========================================= */
-
-.experience-tile { /* Main card */
-  display: grid; /* Two-column layout */
-  grid-template-columns: 0.85fr 1.15fr; /* Text left (narrow), images right (wide) */
-  gap: 28px; /* Space between columns */
-  border: none; /* Border ------------------------------------ 1px solid to be subtle "none" To remove?*/ 
-  border-radius: 18px; /* Card fillet * ------------------------------------ROUNDED CORNERS EXPERIENCE TILE*/
-  padding: 28px; /* Inner padding */
-  background: #ffffff; /* Background */
-  box-shadow: none; /* Shadow  box-shadow: 0 14px 40px rgba(0,0,0,0.08); */
-  align-items: stretch; /* ✅ IMPORTANT: stretch children to same height */
-} /* End .experience-tile */
-
-
-
-
-
-
-
-/* ========================================= */
-/* HARD FIX: CENTER TEXT IN LEFT COLUMN      */
-/* Uses GRID centering + !important to beat  */
-/* any earlier/later overrides.              */
-/* ========================================= */
-
-.experience-text {                 /* Left text column inside the tile */
-  height: 100% !important;         /* Forces the column to fill tile height */
-  display: grid !important;        /* Grid is very reliable for centering */
-  align-content: center !important;/* ✅ Vertically center the text block */
-  justify-items: start !important; /* Keep everything aligned to the left */
-  gap: 16px;                       /* Space between items */
+  opacity: 0;                 /* Hidden before reveal */
+  transform: translateY(30px);/* Slightly shifted down before reveal */
+  transition: opacity 700ms ease, transform 700ms ease; /* Smooth reveal */
 }
 
+/* Visible state after scroll reveal */
+.experience.reveal {
+  opacity: 1;                 /* Fully visible */
+  transform: translateY(0);   /* Move into place */
+}
 
+/* Centers content within the experience section */
+.experience-container {
+  max-width: 1200px;          /* Limit width */
+  margin: 0 auto;             /* Center horizontally */
+}
 
-/* ========================================= */
-/* EXPERIENCE SECTION TITLE (OUTSIDE TILE)  */
-/* ========================================= */
-
+/* Section title (outside tile) */
 .experience-title {
-  font-size: 34px;        /* Bigger section heading */
-  font-weight: 800;
-  margin-bottom: 40px;    /* Space between title and tile */
-  color: #111827;
+  font-size: 34px;            /* Big heading */
+  font-weight: 800;           /* Strong emphasis */
+  margin-bottom: 40px;        /* Space before tile */
+  color: #111827;             /* Near-black */
 }
 
-.role-title { /* Role line */
-  font-size: 30px; /* Role size >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  */
-  font-weight: 600; /* Bold */
-  margin: 0; /* Remove default margin */
-  color: #111827; /* Deep slate */
-} /* End .role-title */
 
-/* ========================================= */
-/* ORGANIZATION + DATE LINE                  */
-/* Slightly stronger + darker for emphasis   */
-/* ========================================= */
+/* =========================================================
+   7) EXPERIENCE TILE (CARD)
+   Two-column grid: left text, right media
+========================================================= */
+.experience-tile {
+  display: grid;                              /* Two-column layout */
+  grid-template-columns: 0.85fr 1.15fr;       /* Left narrower, right wider */
+  gap: 28px;                                  /* Space between columns */
 
+  border: none;                               /* No border (was: 1px solid ...) */
+  border-radius: 18px;                        /* Rounded corners */
+  padding: 28px;                              /* Inner spacing */
+  background: #ffffff;                        /* Card background */
+  box-shadow: none;                           /* No shadow (optional) */
+
+  align-items: stretch;                       /* Stretch columns to equal height */
+}
+
+/* Force desktop two-column layout explicitly (kept from your original) */
+@media (min-width: 901px) {
+  .experience-tile {
+    display: grid;                            /* Grid on desktop */
+    grid-template-columns: 0.85fr 1.15fr;     /* Ensure correct split */
+    align-items: stretch;                     /* Equal height columns */
+  }
+}
+
+
+/* =========================================================
+   8) LEFT COLUMN (TEXT)
+   Vertically center text block inside the tile
+========================================================= */
+.experience-text {
+  height: 100% !important;          /* Fill available tile height */
+  display: grid !important;         /* Use grid for robust centering */
+  align-content: center !important; /* Vertically center content */
+  justify-items: start !important;  /* Keep left alignment */
+  gap: 16px;                        /* Space between text elements */
+}
+
+/* Role title */
+.role-title {
+  font-size: 30px;                  /* Role size */
+  font-weight: 600;                 /* Semi-bold */
+  margin: 0;                        /* Remove default margin */
+  color: #111827;                   /* Near-black */
+}
+
+/* Organization + dates line */
 .meta-line {
-  display: flex;                /* Keep org + date in a row */
-  align-items: center;          /* Vertical alignment */
-  gap: 16px;                    /* Space between org and date */
-  font-size: 20px;              /* Slightly reduced from 22px for balance */
-  font-weight: 400;             /* ✅ Thicker text */
-  color: #1f2937;               /* ✅ Darker than before */
-  margin: 0;
+  display: flex;                    /* Org + date in a row */
+  align-items: center;              /* Vertical alignment */
+  gap: 16px;                        /* Space between pieces */
+  font-size: 20px;                  /* Balanced size */
+  font-weight: 400;                 /* Slightly thicker than default */
+  color: #1f2937;                   /* Darker text */
+  margin: 0;                        /* Remove default margin */
 }
 
-.dot { /* Separator dot */
-  opacity: 0.7; /* Slightly faded */
-} /* End .dot */
+/* Separator dot between org and dates */
+.dot {
+  opacity: 0.7;                     /* Slightly faded */
+}
 
-.role-desc { /* Description paragraph */
-  margin: 0; /* Remove default margin */
-  font-size: 24px; /* Slightly smaller to keep text compact */
-  line-height: 1.7; /* Readable */
-  color: #374151; /* Darker soft slate */
-  max-width: 42ch; /* IMPORTANT: keeps text narrow */
-} /* End .role-desc */
-
-
-/* ========================================= */
-/* RIGHT COLUMN (IMAGE CAROUSEL)             */
-/* Image tile + overlay arrow controls       */
-/* ========================================= */
-
-.experience-media { /* Media column wrapper */
-  display: flex; /* Stack image + counter vertically */
-  flex-direction: column; /* Vertical stack */
-  gap: 12px; /* Space between image and counter */
-  min-height: 420px; /* Baseline height for the media column */
-} /* End .experience-media */
+/* Role description */
+.role-desc {
+  margin: 0;                        /* Remove default margin */
+  font-size: 24px;                  /* Larger body text */
+  line-height: 1.7;                 /* Readable spacing */
+  color: #374151;                   /* Soft dark slate */
+  max-width: 42ch;                  /* Keep paragraph narrow */
+}
 
 
-/* ========================================= */
-/* TILE FRAME                                */
-/* ========================================= */
+/* =========================================================
+   9) RIGHT COLUMN (MEDIA / IMAGE CAROUSEL)
+========================================================= */
+.experience-media {
+  display: flex;                    /* Stack image + counter */
+  flex-direction: column;           /* Vertical stack */
+  gap: 12px;                        /* Space between items */
+  min-height: 420px;                /* Baseline column height */
+}
 
+/* Media tile frame (holds image + overlay controls) */
 .tile-frame {
-  position: relative;       /* Required for overlay positioning */
-  border-radius: 16px;      /* Image fillet */
-  overflow: hidden;         /* Keep controls inside */
-  height: 520px;            /* Adjust tile height */
+  position: relative;               /* Anchor overlay controls */
+  border-radius: 16px;              /* Rounded image corners */
+  overflow: hidden;                 /* Keep overlay inside */
+  height: 520px;                    /* Fixed image tile height */
 }
 
-/* ========================================= */
-/* IMAGE                                     */
-/* ========================================= */
-
+/* Image itself */
 .tile-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: 100%;                      /* Fill width */
+  height: 100%;                     /* Fill height */
+  object-fit: cover;                /* Crop nicely */
+  display: block;                   /* Remove inline gaps */
 }
 
-/* ========================================= */
-/* BOTTOM CENTER CONTROL WRAPPER             */
-/* ========================================= */
 
+/* =========================================================
+   10) CAROUSEL OVERLAY CONTROLS
+   Buttons sit on top of the image at bottom center
+========================================================= */
 .tile-overlay-controls {
-  position: absolute;       /* Overlay inside image */
-  bottom: 16px;             /* Distance from bottom */
-  left: 50%;                /* Center horizontally */
-  transform: translateX(-50%);
-  display: flex;            /* Horizontal layout */
-  gap: 14px;                /* Space between buttons */
-  z-index: 2;               /* Above image */
+  position: absolute;               /* Overlay inside .tile-frame */
+  bottom: 16px;                     /* Distance from bottom */
+  left: 50%;                        /* Center horizontally */
+  transform: translateX(-50%);      /* True centering */
+  display: flex;                    /* Horizontal layout */
+  gap: 14px;                        /* Space between buttons */
+  z-index: 2;                       /* Above image */
 }
 
-/* ========================================= */
-/* CIRCULAR BUTTON STYLE                     */
-/* ========================================= */
-
+/* Circular button base */
 .tile-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.6);
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  width: 36px;                      /* Button width */
+  height: 36px;                     /* Button height */
+  border-radius: 50%;               /* Make circular */
+
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Light border */
+  background: rgba(0, 0, 0, 0.35);            /* Dark translucent */
+  backdrop-filter: blur(4px);                 /* Frosted effect */
+
+  display: flex;                    /* Center arrow */
+  align-items: center;              /* Vertical center */
+  justify-content: center;          /* Horizontal center */
+
+  cursor: pointer;                  /* Pointer cursor */
+  transition: all 0.2s ease;        /* Smooth hover */
 }
 
 .tile-btn:hover {
-  background: rgba(0,0,0,0.55);
-  transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.55);  /* Darker on hover */
+  transform: scale(1.05);           /* Slight grow */
 }
 
-/* ========================================= */
-/* TRIANGLE ARROWS                           */
-/* ========================================= */
-
+/* Left arrow (prev) */
 .tile-btn.prev::before {
-  content: "";
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-right: 8px solid #ffffff;
+  content: "";                      /* Required for pseudo-element */
+  border-top: 6px solid transparent;    /* Triangle top */
+  border-bottom: 6px solid transparent; /* Triangle bottom */
+  border-right: 8px solid #ffffff;      /* White arrow */
 }
 
+/* Right arrow (next) */
 .tile-btn.next::before {
-  content: "";
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-left: 8px solid #ffffff;
+  content: "";                      /* Required for pseudo-element */
+  border-top: 6px solid transparent;    /* Triangle top */
+  border-bottom: 6px solid transparent; /* Triangle bottom */
+  border-left: 8px solid #ffffff;       /* White arrow */
 }
 
 
+/* =========================================================
+   11) RESPONSIVE (MOBILE)
+   Stack layout + reduce paddings/heights
+========================================================= */
+@media (max-width: 650px) {
+  .experience {
+    padding: 80px 20px;             /* Smaller section padding */
+  }
 
+  .experience-tile {
+    grid-template-columns: 1fr;     /* Stack text above image */
+  }
 
+  .experience-media {
+    min-height: 150px;              /* Reduce column height */
+  }
 
-
-
-/* ========================================= */
-/* RESPONSIVE (Mobile)                       */
-/* ========================================= */
-
-@media (max-width: 650px) { /* Mobile layout */
-  .experience { /* Reduce outer padding */
-    padding: 80px 20px; /* Smaller spacing */
-  } /* End .experience */
-
-  .experience-tile { /* Stack text above image */
-    grid-template-columns: 1fr; /* Single column */
-  } /* End .experience-tile */
-
-  .experience-media { /* Reduce min height */
-    min-height: 150px; /* Smaller height on mobile */
-  } /* End .experience-media */
-
-  .role-desc { /* Allow wider text on mobile */
-    max-width: 60ch; /* Wider for smaller screens */
-  } /* End .role-desc */
-} /* End media query */
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .role-desc {
+    max-width: 60ch;                /* Allow wider text on small screens */
+  }
+}
