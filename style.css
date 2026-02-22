@@ -309,15 +309,55 @@ body {
   padding-top: 4px; /* Small top spacing */
 } /* End .tile-controls */
 
-.tile-btn { /* Arrow buttons */
-  border: none; /* Border */
-  background: #ffffff; /* White */
-  padding: 10px 10px; /* Button size */
-  border-radius: 5px; /* Rounded */
-  font-size: 18px; /* Arrow size */
-  cursor: pointer; /* Pointer cursor */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06); /* Soft shadow */ /*    box-shadow: 0 8px 20px rgba(0,0,0,0.06); Soft shadow */
-} /* End .tile-btn */
+/* ========================================= */
+/* CIRCULAR ARROW BUTTON STYLE               */
+/* Clean modern triangle arrows              */
+/* ========================================= */
+
+.tile-btn {
+  width: 42px;                 /* Circle size */
+  height: 42px;
+  border-radius: 50%;          /* Makes it circular */
+  border: 1px solid #e5e7eb;   /* Subtle border */
+  background: #ffffff;         /* White background */
+  display: flex;               /* Center triangle */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect (optional but nice) */
+.tile-btn:hover {
+  transform: translateY(-2px);
+  background: #f9fafb;
+}
+
+
+/* ========================================= */
+/* TRIANGLE ARROW SHAPES (PURE CSS)         */
+/* ========================================= */
+
+/* LEFT ARROW */
+.tile-btn.prev::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 8px solid #111827;  /* Triangle color */
+}
+
+/* RIGHT ARROW */
+.tile-btn.next::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid #111827;   /* Triangle color */
+}
+
 
 .tile-btn:hover { /* Hover lift */
   transform: translateY(-1px); /* Slight lift */
