@@ -122,6 +122,87 @@
   </div> <!-- End experience-container -->
 </section> <!-- End experience section -->
 
+
+
+    
+
+
+
+
+                <!-- ========================================= -->
+                <!-- EXPERIENCE: TILE CAROUSEL + SCROLL REVEAL -->
+                <!-- ========================================= -->
+                <script>
+                  // =========================================
+                  // TILE IMAGE FILE LIST (update extension if needed)
+                  // =========================================
+                  const imageFiles = [ // Array of filenames for tiles
+                    "assets/experience_6.0.png", // Tile 1
+                    "assets/experience_6.1.png", // Tile 2
+                    "assets/experience_6.2.png", // Tile 3
+                    "assets/experience_6.3.png", // Tile 4
+                    "assets/experience_6.4.png", // Tile 5
+                    "assets/experience_6.5.png"  // Tile 6
+                  ]; // End imageFiles
+                
+                  let currentIndex = 0; // Keeps track of which tile we are showing
+                
+                  const tileImage = document.getElementById("tileImage"); // The <img> element
+                  const tileCounter = document.getElementById("tileCounter"); // The "1 / 6" label
+                  const prevBtn = document.getElementById("prevBtn"); // Left arrow button
+                  const nextBtn = document.getElementById("nextBtn"); // Right arrow button
+                
+                  // =========================================
+                  // FUNCTION: Update tile image + counter
+                  // =========================================
+                  function renderTile() { // Function to refresh UI
+                    tileImage.src = imageFiles[currentIndex]; // Set image to current file
+                    tileCounter.textContent = `${currentIndex + 1} / ${imageFiles.length}`; // Update counter text
+                  } // End renderTile
+                
+                  // =========================================
+                  // BUTTON EVENTS: Previous / Next
+                  // =========================================
+                  prevBtn.addEventListener("click", () => { // On previous click
+                    currentIndex = (currentIndex - 1 + imageFiles.length) % imageFiles.length; // Wrap backward
+                    renderTile(); // Refresh UI
+                  }); // End prev click handler
+                
+                  nextBtn.addEventListener("click", () => { // On next click
+                    currentIndex = (currentIndex + 1) % imageFiles.length; // Wrap forward
+                    renderTile(); // Refresh UI
+                  }); // End next click handler
+                
+                  renderTile(); // Initial render
+                
+                  // =========================================
+                  // SCROLL REVEAL: Add .reveal when visible
+                  // =========================================
+                  const experienceSection = document.querySelector(".experience"); // Select the section
+                
+                  const observer = new IntersectionObserver( // Create observer to detect visibility
+                    (entries) => { // Callback with visibility entries
+                      entries.forEach((entry) => { // Loop through entries
+                        if (entry.isIntersecting) { // If section is visible
+                          entry.target.classList.add("reveal"); // Add reveal class (triggers CSS transition)
+                        } // End if
+                      }); // End forEach
+                    }, // End callback
+                    { threshold: 0.2 } // Trigger when 20% of section is visible
+                  ); // End observer
+                
+                  observer.observe(experienceSection); // Start observing the experience section
+                </script>
+
+
+
+
+
+
+
+
+
+
     
 
 </body>
