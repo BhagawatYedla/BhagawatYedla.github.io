@@ -111,7 +111,7 @@ body {
 /* ========================================= */
 
 .hero-image img {
-    width: 70vw;        /* <-- Makes it scale with screen width (try 60vw–80vw) */
+    width: 100vw;        /* <-- Makes it scale with screen width (try 60vw–80vw) */
     max-width: 1200px;  /* <-- Upper limit so it doesn't get ridiculous on big screens */
     height: auto;       /* Keeps aspect ratio correct */
     display: block;     /* Removes inline image spacing quirks */
