@@ -116,19 +116,25 @@
           <!-- RIGHT COLUMN: IMAGE -->
           <div class="experience-media">
     
+            <!-- ========================================= -->
+            <!-- IMAGE FRAME WITH OVERLAY CONTROLS        -->
+            <!-- ========================================= -->
+            
             <div class="tile-frame">
+            
+              <!-- Experience Image -->
               <img id="tileImage" src="assets/experience_6.0.png" alt="Experience Tile Image">
+            
+              <!-- Left Arrow (Overlayed on image) -->
+              <button class="tile-btn prev" id="prevBtn" aria-label="Previous"></button>
+            
+              <!-- Right Arrow (Overlayed on image) -->
+              <button class="tile-btn next" id="nextBtn" aria-label="Next"></button>
+            
             </div>
-    
-            <div class="tile-controls">
-                <!-- ========================================= -->
-                <!-- CIRCULAR ARROW BUTTONS (No Text Inside) -->
-                <!-- ========================================= -->
-                
-                <button class="tile-btn prev" id="prevBtn" aria-label="Previous"></button>
-                <div class="tile-counter" id="tileCounter">1 / 6</div>
-                <button class="tile-btn next" id="nextBtn" aria-label="Next"></button>
-            </div>
+            
+            <!-- Optional: Keep counter below image -->
+            <div class="tile-counter" id="tileCounter">1 / 6</div>
     
           </div> <!-- End experience-media -->
     
