@@ -244,7 +244,7 @@ body {
 }
 
 .role-title { /* Role line */
-  font-size: 34px; /* Role size >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  */
+  font-size: 30px; /* Role size >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  */
   font-weight: 800; /* Bold */
   margin: 0; /* Remove default margin */
   color: #111827; /* Deep slate */
@@ -254,7 +254,7 @@ body {
   display: flex; /* Horizontal row */
   align-items: center; /* Vertical center */
   gap: 20px; /* Space between items >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-  font-size: 30px; /* Smaller */
+  font-size: 26px; /* Smaller */
   color: #4b5563; /* Soft slate */
   margin: 0; /* Remove default */
 } /* End .meta-line */
@@ -265,7 +265,7 @@ body {
 
 .role-desc { /* Description paragraph */
   margin: 0; /* Remove default margin */
-  font-size: 26px; /* Slightly smaller to keep text compact */
+  font-size: 24px; /* Slightly smaller to keep text compact */
   line-height: 1.7; /* Readable */
   color: #374151; /* Darker soft slate */
   max-width: 42ch; /* IMPORTANT: keeps text narrow */
