@@ -305,7 +305,7 @@ body {
 .tile-btn.prev::before {
   content: "";
   position: relative;        /* Allows fine adjustment */
-  left: -5px;                 /* 🔵 Move triangle right slightly */
+  left: -3px;                 /* 🔵 Move triangle right slightly */
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
   border-right: 8px solid #ffffff;
@@ -315,7 +315,7 @@ body {
 .tile-btn.next::before {
   content: "";
   position: relative;
-  right: -5px;                /* 🔵 Move triangle left slightly */
+  right: -3px;                /* 🔵 Move triangle left slightly */
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
   border-left: 8px solid #ffffff;
