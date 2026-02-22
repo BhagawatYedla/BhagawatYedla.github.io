@@ -245,19 +245,25 @@ body {
 
 .role-title { /* Role line */
   font-size: 30px; /* Role size >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  */
-  font-weight: 500; /* Bold */
+  font-weight: 600; /* Bold */
   margin: 0; /* Remove default margin */
   color: #111827; /* Deep slate */
 } /* End .role-title */
 
-.meta-line { /* Org + dates line */
-  display: flex; /* Horizontal row */
-  align-items: center; /* Vertical center */
-  gap: 20px; /* Space between items >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-  font-size: 22px; /* Smaller */
-  color: #4b5563; /* Soft slate */
-  margin: 0; /* Remove default */
-} /* End .meta-line */
+/* ========================================= */
+/* ORGANIZATION + DATE LINE                  */
+/* Slightly stronger + darker for emphasis   */
+/* ========================================= */
+
+.meta-line {
+  display: flex;                /* Keep org + date in a row */
+  align-items: center;          /* Vertical alignment */
+  gap: 16px;                    /* Space between org and date */
+  font-size: 20px;              /* Slightly reduced from 22px for balance */
+  font-weight: 400;             /* ✅ Thicker text */
+  color: #1f2937;               /* ✅ Darker than before */
+  margin: 0;
+}
 
 .dot { /* Separator dot */
   opacity: 0.7; /* Slightly faded */
