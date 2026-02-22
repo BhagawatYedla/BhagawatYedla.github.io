@@ -80,3 +80,40 @@ body {
 .logo a:hover {
     color: #1e3a8a;                                    /* Blue on hover */
 }
+
+
+/* ========================================= */
+/* HERO SECTION STYLING                     */
+/* Premium centered landing section          */
+/* ========================================= */
+
+.hero {
+    height: 80vh;                 /* Makes section occupy most of screen */
+    display: flex;                /* Enables vertical centering */
+    align-items: center;          /* Vertically center content */
+    justify-content: center;      /* Horizontally center content */
+    text-align: center;           /* Center text */
+    padding: 0 40px;              /* Side spacing */
+    background: #ffffff;          /* Clean white background */
+}
+
+/* Container that limits text width for readability */
+.hero-content {
+    max-width: 900px;
+}
+
+/* Main headline styling */
+.hero-title {
+    font-size: 46px;              /* Strong visual presence */
+    font-weight: 800;             /* Extra bold */
+    line-height: 1.2;
+    margin-bottom: 30px;          /* Space below headline */
+    color: #111827;               /* Deep slate tone */
+}
+
+/* Supporting paragraph styling */
+.hero-subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #4b5563;               /* Softer secondary text */
+}
