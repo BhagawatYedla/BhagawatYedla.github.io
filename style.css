@@ -1,1 +1,52 @@
+/* Reset default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Body */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f0f0f0;   /* Light grey background */
+    color: #1f2937;
+}
+
+/* Top Navigation Bar */
+.navbar {
+    position: fixed;            /* Static / fixed top bar */
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    z-index: 1000;
+}
+
+/* Name on left */
+.navbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Nav links */
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #1f2937;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #1e3a8a;
+}
+
+/* Page content spacing (because navbar is fixed) */
+.content {
+    padding: 120px 80px;
+    max-width: 1000px;
+}
