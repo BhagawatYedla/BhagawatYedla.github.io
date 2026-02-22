@@ -105,15 +105,16 @@ body {
 }
 
 /* ========================================= */
-/* HERO IMAGE SIZE CONTROL                  */
-/* Increase max-width to make image larger  */
+/* HERO IMAGE SIZE (FORCES UPSCALING)        */
+/* If max-width changes don't work, set      */
+/* width directly using px or vw.            */
 /* ========================================= */
 
 .hero-image img {
-    max-width: 500px;   /* Increase this value to enlarge image */
-    width: 100%;        /* Keeps image responsive */
-    height: auto;       /* Maintains aspect ratio */
-    display: block;
+    width: 70vw;        /* <-- Makes it scale with screen width (try 60vw–80vw) */
+    max-width: 1200px;  /* <-- Upper limit so it doesn't get ridiculous on big screens */
+    height: auto;       /* Keeps aspect ratio correct */
+    display: block;     /* Removes inline image spacing quirks */
 }
 
 /* ========================================= */
