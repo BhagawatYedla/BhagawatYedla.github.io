@@ -194,36 +194,49 @@ body {
 
 
 /* ========================================= */
-/* EXPERIENCE TILE (Single Card)             */
-/* Text left + Image right INSIDE SAME TILE  */
-/* Same height behavior driven by grid       */
+/* EXPERIENCE TILE (CARD)                     */
+/* Force equal-height columns + stretch       */
 /* ========================================= */
 
-.experience-tile { /* The main card that contains text + image */
-  display: grid; /* Two-column grid */
-  grid-template-columns: 0.85fr 1.15fr; /* Text narrower, image wider */
+.experience-tile { /* Main card */
+  display: grid; /* Two-column layout */
+  grid-template-columns: 0.85fr 1.15fr; /* Text left (narrow), images right (wide) */
   gap: 28px; /* Space between columns */
-  border: 1px solid #e5e7eb; /* Light border */
-  border-radius: 18px; /* Rounded corners */
-  padding: 28px; /* Inner spacing */
-  background: #ffffff; /* Card background */
-  box-shadow: 0 14px 40px rgba(0,0,0,0.08); /* Premium shadow */
-  align-items: stretch; /* IMPORTANT: makes both columns same height */
+  border: 1px solid #e5e7eb; /* Border */
+  border-radius: 18px; /* Card fillet */
+  padding: 28px; /* Inner padding */
+  background: #ffffff; /* Background */
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08); /* Shadow */
+  align-items: stretch; /* ✅ IMPORTANT: stretch children to same height */
 } /* End .experience-tile */
 
 
+
+
+
+
+
 /* ========================================= */
-/* LEFT COLUMN TEXT ALIGNMENT FIX            */
-/* Centers text vertically inside tile       */
+/* TEXT COLUMN (VERTICAL CENTER FIX)          */
+/* Forces the text column to fill height      */
+/* then centers content vertically            */
 /* ========================================= */
 
-.experience-text {
-  display: flex;              /* Enable flex layout */
-  flex-direction: column;     /* Stack text elements vertically */
-  justify-content: center;    /* ✅ Center vertically */
-  align-items: flex-start;    /* Keep text aligned left */
-  gap: 16px;                  /* Space between text elements */
-}
+.experience-text { /* Left text column */
+  height: 100%; /* ✅ Fill full height of the grid cell */
+  min-height: 100%; /* ✅ Extra safety for some browsers */
+  display: flex; /* Enable flex layout */
+  flex-direction: column; /* Stack text items vertically */
+  justify-content: center; /* ✅ Center vertically */
+  align-items: flex-start; /* Keep left alignment */
+  gap: 16px; /* Spacing between lines */
+} /* End .experience-text */
+
+
+
+
+
+
 
 /* ========================================= */
 /* EXPERIENCE SECTION TITLE (OUTSIDE TILE)  */
