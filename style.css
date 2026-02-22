@@ -202,7 +202,7 @@ body {
   display: grid; /* Two-column layout */
   grid-template-columns: 0.85fr 1.15fr; /* Text left (narrow), images right (wide) */
   gap: 28px; /* Space between columns */
-  border: none #e5e7eb; /* Border ------------------------------------ 1px solid to be subtle "none" To remove?*/ 
+  border: none; /* Border ------------------------------------ 1px solid to be subtle "none" To remove?*/ 
   border-radius: 18px; /* Card fillet * ------------------------------------ROUNDED CORNERS EXPERIENCE TILE*/
   padding: 28px; /* Inner padding */
   background: #ffffff; /* Background */
@@ -289,7 +289,7 @@ body {
   flex: 1; /* Take available vertical space */
   border-radius: 16px; /* Rounded corners ---------------------------------------- ROUNDED CORNERS IMAGE TILE*/
   overflow: hidden; /* Crop overflow */
-  border: 1px solid #e5e7eb; /* Light border */
+  border: none; /* Light border */
   box-shadow: none; /* Stronger image emphasis */ /*box-shadow: 0 14px 38px rgba(0,0,0,0.12); /* Stronger image emphasis */
   background: #f9fafb; /* Light background behind image */
 } /* End .tile-frame */
@@ -310,7 +310,7 @@ body {
 } /* End .tile-controls */
 
 .tile-btn { /* Arrow buttons */
-  border: none #e5e7eb; /* Border */
+  border: none; /* Border */
   background: #ffffff; /* White */
   padding: 10px 10px; /* Button size */
   border-radius: 5px; /* Rounded */
