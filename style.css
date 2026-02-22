@@ -206,7 +206,7 @@ body {
   border-radius: 18px; /* Card fillet * ------------------------------------ROUNDED CORNERS EXPERIENCE TILE/
   padding: 28px; /* Inner padding */
   background: #ffffff; /* Background */
-  box-shadow: 0 14px 40px rgba(0,0,0,0.08); /* Shadow */
+  box-shadow: none; /* Shadow  box-shadow: 0 14px 40px rgba(0,0,0,0.08); */
   align-items: stretch; /* ✅ IMPORTANT: stretch children to same height */
 } /* End .experience-tile */
 
@@ -290,7 +290,7 @@ body {
   border-radius: 16px; /* Rounded corners ---------------------------------------- ROUNDED CORNERS IMAGE TILE*/
   overflow: hidden; /* Crop overflow */
   border: 1px solid #e5e7eb; /* Light border */
-  box-shadow: 0 14px 38px rgba(0,0,0,0.12); /* Stronger image emphasis */
+  box-shadow: none; /* Stronger image emphasis */ /*box-shadow: 0 14px 38px rgba(0,0,0,0.12); /* Stronger image emphasis */
   background: #f9fafb; /* Light background behind image */
 } /* End .tile-frame */
 
@@ -316,7 +316,7 @@ body {
   border-radius: 12px; /* Rounded */
   font-size: 18px; /* Arrow size */
   cursor: pointer; /* Pointer cursor */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06); /* Soft shadow */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06); /* Soft shadow */ /*    box-shadow: 0 8px 20px rgba(0,0,0,0.06); Soft shadow */
 } /* End .tile-btn */
 
 .tile-btn:hover { /* Hover lift */
