@@ -65,136 +65,233 @@
             </p>
         </div>
 
+
     <!-- ========================================= -->
     <!-- EXPERIENCE SECTION                         -->
-    <!-- Full-screen slides (each slide = 100vh)    -->
-    <!-- Latest experience appears first            -->
+    <!-- 6 full-screen slides with scroll-snap      -->
     <!-- ========================================= -->
     
-    <section class="experience" id="experience">
+    <section id="experience" class="experience">
     
       <!-- ======================================= -->
-      <!-- EXPERIENCE SLIDE #6 (LATEST)            -->
-      <!-- Text on left | image tiles on right     -->
+      <!-- Slide 1 (Oldest)                         -->
+      <!-- Replace placeholders later               -->
       <!-- ======================================= -->
-      <article class="exp-slide" data-exp="6">
-    
-        <!-- LEFT COLUMN: Experience text -->
+      <article class="exp-slide reveal" data-exp="1">
         <div class="exp-left">
-          <div class="exp-kicker">Experience</div>
+          <h2 class="exp-role">Experience 1 Title</h2>
+          <div class="exp-meta">
+            <span class="exp-org">Organization</span>
+            <span class="exp-dates">Year - Year</span>
+          </div>
+          <p class="exp-desc">
+            Placeholder description for Experience 1.
+          </p>
+        </div>
     
-          <h2 class="exp-title">Graduate Research Assistant</h2>
+        <div class="exp-right">
+          <div class="tile-wrap">
+            <!-- Flippable tile -->
+            <div class="flip-tile" id="tile-1">
+              <div class="tile-face tile-front">
+                <img id="img-1" src="assets/experience_1.0.png" alt="Experience 1 image">
+              </div>
+              <div class="tile-face tile-back">
+                <img id="imgBack-1" src="assets/experience_1.1.png" alt="Experience 1 image (back)">
+              </div>
+            </div>
+    
+            <!-- Arrow controls -->
+            <div class="tile-controls">
+              <button class="tile-btn" data-dir="prev" data-exp="1" aria-label="Previous image">←</button>
+              <span class="tile-counter" id="counter-1">1 / 2</span>
+              <button class="tile-btn" data-dir="next" data-exp="1" aria-label="Next image">→</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    
+      <!-- ======================================= -->
+      <!-- Slide 2                                  -->
+      <!-- ======================================= -->
+      <article class="exp-slide reveal" data-exp="2">
+        <div class="exp-left">
+          <h2 class="exp-role">Experience 2 Title</h2>
+          <div class="exp-meta">
+            <span class="exp-org">Organization</span>
+            <span class="exp-dates">Year - Year</span>
+          </div>
+          <p class="exp-desc">Placeholder description for Experience 2.</p>
+        </div>
+    
+        <div class="exp-right">
+          <div class="tile-wrap">
+            <div class="flip-tile" id="tile-2">
+              <div class="tile-face tile-front">
+                <img id="img-2" src="assets/experience_2.0.png" alt="Experience 2 image">
+              </div>
+              <div class="tile-face tile-back">
+                <img id="imgBack-2" src="assets/experience_2.1.png" alt="Experience 2 image (back)">
+              </div>
+            </div>
+    
+            <div class="tile-controls">
+              <button class="tile-btn" data-dir="prev" data-exp="2" aria-label="Previous image">←</button>
+              <span class="tile-counter" id="counter-2">1 / 2</span>
+              <button class="tile-btn" data-dir="next" data-exp="2" aria-label="Next image">→</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    
+      <!-- ======================================= -->
+      <!-- Slide 3                                  -->
+      <!-- ======================================= -->
+      <article class="exp-slide reveal" data-exp="3">
+        <div class="exp-left">
+          <h2 class="exp-role">Experience 3 Title</h2>
+          <div class="exp-meta">
+            <span class="exp-org">Organization</span>
+            <span class="exp-dates">Year - Year</span>
+          </div>
+          <p class="exp-desc">Placeholder description for Experience 3.</p>
+        </div>
+    
+        <div class="exp-right">
+          <div class="tile-wrap">
+            <div class="flip-tile" id="tile-3">
+              <div class="tile-face tile-front">
+                <img id="img-3" src="assets/experience_3.0.png" alt="Experience 3 image">
+              </div>
+              <div class="tile-face tile-back">
+                <img id="imgBack-3" src="assets/experience_3.1.png" alt="Experience 3 image (back)">
+              </div>
+            </div>
+    
+            <div class="tile-controls">
+              <button class="tile-btn" data-dir="prev" data-exp="3" aria-label="Previous image">←</button>
+              <span class="tile-counter" id="counter-3">1 / 2</span>
+              <button class="tile-btn" data-dir="next" data-exp="3" aria-label="Next image">→</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    
+      <!-- ======================================= -->
+      <!-- Slide 4                                  -->
+      <!-- ======================================= -->
+      <article class="exp-slide reveal" data-exp="4">
+        <div class="exp-left">
+          <h2 class="exp-role">Experience 4 Title</h2>
+          <div class="exp-meta">
+            <span class="exp-org">Organization</span>
+            <span class="exp-dates">Year - Year</span>
+          </div>
+          <p class="exp-desc">Placeholder description for Experience 4.</p>
+        </div>
+    
+        <div class="exp-right">
+          <div class="tile-wrap">
+            <div class="flip-tile" id="tile-4">
+              <div class="tile-face tile-front">
+                <img id="img-4" src="assets/experience_4.0.png" alt="Experience 4 image">
+              </div>
+              <div class="tile-face tile-back">
+                <img id="imgBack-4" src="assets/experience_4.1.png" alt="Experience 4 image (back)">
+              </div>
+            </div>
+    
+            <div class="tile-controls">
+              <button class="tile-btn" data-dir="prev" data-exp="4" aria-label="Previous image">←</button>
+              <span class="tile-counter" id="counter-4">1 / 2</span>
+              <button class="tile-btn" data-dir="next" data-exp="4" aria-label="Next image">→</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    
+      <!-- ======================================= -->
+      <!-- Slide 5                                  -->
+      <!-- ======================================= -->
+      <article class="exp-slide reveal" data-exp="5">
+        <div class="exp-left">
+          <h2 class="exp-role">Experience 5 Title</h2>
+          <div class="exp-meta">
+            <span class="exp-org">Organization</span>
+            <span class="exp-dates">Year - Year</span>
+          </div>
+          <p class="exp-desc">Placeholder description for Experience 5.</p>
+        </div>
+    
+        <div class="exp-right">
+          <div class="tile-wrap">
+            <div class="flip-tile" id="tile-5">
+              <div class="tile-face tile-front">
+                <img id="img-5" src="assets/experience_5.0.png" alt="Experience 5 image">
+              </div>
+              <div class="tile-face tile-back">
+                <img id="imgBack-5" src="assets/experience_5.1.png" alt="Experience 5 image (back)">
+              </div>
+            </div>
+    
+            <div class="tile-controls">
+              <button class="tile-btn" data-dir="prev" data-exp="5" aria-label="Previous image">←</button>
+              <span class="tile-counter" id="counter-5">1 / 2</span>
+              <button class="tile-btn" data-dir="next" data-exp="5" aria-label="Next image">→</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    
+      <!-- ======================================= -->
+      <!-- Slide 6 (Latest)                         -->
+      <!-- Your real content + your real images     -->
+      <!-- ======================================= -->
+      <article class="exp-slide reveal" data-exp="6">
+        <div class="exp-left">
+          <!-- Role / Title -->
+          <h2 class="exp-role">Graduate Research Assistant</h2>
+    
+          <!-- Organization + Dates -->
           <div class="exp-meta">
             <span class="exp-org">University of Florida</span>
-            <span class="exp-dot">•</span>
-            <span class="exp-dates">2021 – Present</span>
+            <span class="exp-dates">2021 - Present</span>
           </div>
     
+          <!-- Summary -->
           <p class="exp-desc">
             Led vehicular safety/security exploration platforms. Defined requirements and validation plans,
             implemented RTOS-based steer-by-wire and torque vectoring systems, and ran fault-injection
             experiments on safety-critical components.
           </p>
-    
-          <!-- Optional: small hint to scroll -->
-          <div class="exp-hint">Scroll ↓ for more experience</div>
         </div>
     
-        <!-- RIGHT COLUMN: Tile carousel -->
         <div class="exp-right">
+          <div class="tile-wrap">
     
-          <!-- Carousel header (optional) -->
-          <div class="tile-header">
-            <span class="tile-title">Highlights</span>
+            <!-- Flippable tile: front/back images swap during flip animation -->
+            <div class="flip-tile" id="tile-6">
+              <div class="tile-face tile-front">
+                <!-- IMPORTANT: add your extension (.png/.jpg) -->
+                <img id="img-6" src="assets/experience_6.0.png" alt="Experience 6 image">
+              </div>
+              <div class="tile-face tile-back">
+                <img id="imgBack-6" src="assets/experience_6.1.png" alt="Experience 6 image (back)">
+              </div>
+            </div>
     
             <!-- Arrow controls -->
             <div class="tile-controls">
-              <button class="tile-btn prev" type="button" aria-label="Previous image">◀</button>
-              <button class="tile-btn next" type="button" aria-label="Next image">▶</button>
-            </div>
-          </div>
-    
-          <!-- Tile (flip-style card) -->
-          <!-- NOTE: This shows one tile at a time. Clicking arrows changes the image. -->
-          <div class="tile-card">
-            <div class="tile-face tile-front">
-              <img class="tile-img"
-                   src="assets/experience_6.0.png"
-                   alt="Experience 6 image 0"
-                   data-idx="0">
+              <button class="tile-btn" data-dir="prev" data-exp="6" aria-label="Previous image">←</button>
+              <span class="tile-counter" id="counter-6">1 / 6</span>
+              <button class="tile-btn" data-dir="next" data-exp="6" aria-label="Next image">→</button>
             </div>
     
-            <!-- Optional "back" of card (you can add captions later) -->
-            <div class="tile-face tile-back">
-              <div class="tile-back-text">
-                <!-- Back side content placeholder -->
-                Image details / caption (optional)
-              </div>
-            </div>
-          </div>
-    
-          <!-- Optional: dots / index indicator -->
-          <div class="tile-indicator">
-            <span class="tile-count">1 / 6</span>
-          </div>
-    
-        </div>
-      </article>
-    
-      <!-- ======================================= -->
-      <!-- PLACEHOLDERS FOR OTHER EXPERIENCES      -->
-      <!-- Copy/paste this slide 5 more times      -->
-      <!-- and change data-exp + content           -->
-      <!-- ======================================= -->
-    
-      <!-- Slide #5 -->
-      <article class="exp-slide" data-exp="5">
-        <div class="exp-left">
-          <div class="exp-kicker">Experience</div>
-          <h2 class="exp-title">Experience Title 5</h2>
-          <div class="exp-meta">
-            <span class="exp-org">Organization 5</span>
-            <span class="exp-dot">•</span>
-            <span class="exp-dates">Year – Year</span>
-          </div>
-          <p class="exp-desc">Add your description here.</p>
-        </div>
-        <div class="exp-right">
-          <div class="tile-header">
-            <span class="tile-title">Highlights</span>
-            <div class="tile-controls">
-              <button class="tile-btn prev" type="button">◀</button>
-              <button class="tile-btn next" type="button">▶</button>
-            </div>
-          </div>
-          <div class="tile-card">
-            <div class="tile-face tile-front">
-              <img class="tile-img" src="assets/experience_5.0.png" alt="Experience 5 image 0" data-idx="0">
-            </div>
-            <div class="tile-face tile-back">
-              <div class="tile-back-text">Image details / caption (optional)</div>
-            </div>
-          </div>
-          <div class="tile-indicator">
-            <span class="tile-count">1 / 6</span>
           </div>
         </div>
       </article>
-    
-      <!-- Slide #4 -->
-      <article class="exp-slide" data-exp="4"> ... </article>
-    
-      <!-- Slide #3 -->
-      <article class="exp-slide" data-exp="3"> ... </article>
-    
-      <!-- Slide #2 -->
-      <article class="exp-slide" data-exp="2"> ... </article>
-    
-      <!-- Slide #1 -->
-      <article class="exp-slide" data-exp="1"> ... </article>
     
     </section>
-
 
         
     </div>
