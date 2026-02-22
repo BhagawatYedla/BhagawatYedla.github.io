@@ -269,7 +269,7 @@ body {
 
 .role-desc { /* Description paragraph */
   margin: 0; /* Remove default margin */
-  font-size: 8px; /* Slightly smaller to keep text compact */
+  font-size: 26px; /* Slightly smaller to keep text compact */
   line-height: 1.7; /* Readable */
   color: #374151; /* Darker soft slate */
   max-width: 42ch; /* IMPORTANT: keeps text narrow */
