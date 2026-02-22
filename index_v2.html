@@ -75,68 +75,64 @@
 
 
 
-                <!-- ========================================= -->
-                <!-- EXPERIENCE SECTION (Below Hero)           -->
-                <!-- One premium "experience tile" that        -->
-                <!-- contains BOTH text (left) and images (right) -->
-                <!-- ========================================= -->
-                
-                <section class="experience" id="experience"> <!-- Experience section wrapper -->
-                  <div class="experience-container"> <!-- Centers section content -->
-                
-                    <!-- ========================================= -->
-                    <!-- EXPERIENCE TILE (Single card container)   -->
-                    <!-- Text on left, Image carousel on right     -->
-                    <!-- ========================================= -->
-                    <div class="experience-tile"> <!-- The main tile/card that contains everything -->
-                
-                      <!-- ========================================= -->
-                      <!-- LEFT: TEXT COLUMN (Narrow)                -->
-                      <!-- ========================================= -->
-                      <div class="experience-text"> <!-- Text block inside the tile -->
-                
-                        <h2 class="experience-title">Experience</h2> <!-- Section title inside tile -->
-                
-                        <h3 class="role-title">Graduate Research Assistant</h3> <!-- Role -->
-                
-                        <div class="meta-line"> <!-- Organization + dates row -->
-                          <span class="org">University of Florida</span> <!-- Organization -->
-                          <span class="dot">•</span> <!-- Separator -->
-                          <span class="dates">2021 - Present</span> <!-- Dates -->
-                        </div> <!-- End meta-line -->
-                
-                        <p class="role-desc"> <!-- Description -->
-                          Led vehicular safety/security exploration platforms. Defined requirements and validation plans,
-                          implemented RTOS-based steer-by-wire and torque vectoring systems, and ran fault-injection experiments
-                          on safety-critical components.
-                        </p> <!-- End description -->
-                
-                        <!-- NOTE: You can add 4 more experience tiles below later (Experience 4..1) -->
-                        <!-- Keep Experience 5 as the latest (top) -->
-                
-                      </div> <!-- End experience-text -->
-                
-                      <!-- ========================================= -->
-                      <!-- RIGHT: IMAGE CAROUSEL COLUMN (BIG)         -->
-                      <!-- ========================================= -->
-                      <div class="experience-media"> <!-- Media block inside the same tile -->
-                
-                        <div class="tile-frame"> <!-- Frame that holds current image -->
-                          <img id="tileImage" src="assets/experience_6.0.png" alt="Experience Tile Image"> <!-- Current tile image -->
-                        </div> <!-- End tile-frame -->
-                
-                        <div class="tile-controls"> <!-- Arrows + counter -->
-                          <button class="tile-btn" id="prevBtn" aria-label="Previous image">←</button> <!-- Prev -->
-                          <div class="tile-counter" id="tileCounter">1 / 6</div> <!-- Counter -->
-                          <button class="tile-btn" id="nextBtn" aria-label="Next image">→</button> <!-- Next -->
-                        </div> <!-- End tile-controls -->
-                
-                      </div> <!-- End experience-media -->
-                
-                    </div> <!-- End experience-tile -->
-                
-                  </div> <!-- End experience-container -->
-                </section> <!-- End experience section -->
+    <!-- ========================================= -->
+    <!-- EXPERIENCE SECTION                       -->
+    <!-- Section title OUTSIDE the experience tile -->
+    <!-- ========================================= -->
+    
+    <section class="experience" id="experience"> <!-- Section wrapper -->
+    
+      <div class="experience-container"> <!-- Centers everything -->
+    
+        <!-- ========================================= -->
+        <!-- SECTION TITLE (OUTSIDE THE TILE)          -->
+        <!-- ========================================= -->
+        <h2 class="experience-title">Experience</h2>
+    
+        <!-- ========================================= -->
+        <!-- EXPERIENCE TILE (Card)                    -->
+        <!-- ========================================= -->
+        <div class="experience-tile"> <!-- Main card -->
+    
+          <!-- LEFT COLUMN: TEXT -->
+          <div class="experience-text">
+    
+            <h3 class="role-title">Graduate Research Assistant</h3>
+    
+            <div class="meta-line">
+              <span class="org">University of Florida</span>
+              <span class="dot">•</span>
+              <span class="dates">2021 - Present</span>
+            </div>
+    
+            <p class="role-desc">
+              Led vehicular safety/security exploration platforms. Defined requirements and validation plans,
+              implemented RTOS-based steer-by-wire and torque vectoring systems, and ran fault-injection experiments
+              on safety-critical components.
+            </p>
+    
+          </div> <!-- End experience-text -->
+    
+          <!-- RIGHT COLUMN: IMAGE -->
+          <div class="experience-media">
+    
+            <div class="tile-frame">
+              <img id="tileImage" src="assets/experience_6.0.png" alt="Experience Tile Image">
+            </div>
+    
+            <div class="tile-controls">
+              <button class="tile-btn" id="prevBtn">←</button>
+              <div class="tile-counter" id="tileCounter">1 / 6</div>
+              <button class="tile-btn" id="nextBtn">→</button>
+            </div>
+    
+          </div> <!-- End experience-media -->
+    
+        </div> <!-- End experience-tile -->
+    
+      </div> <!-- End experience-container -->
+    
+    </section>
 
 
 
