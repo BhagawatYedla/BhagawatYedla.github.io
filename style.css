@@ -12,7 +12,7 @@
    2️⃣ BODY STYLING (Applies to entire website)
 ========================================= */
 body {
-    font-family: "Aptos", Arial, sans-serif;        /* Main font for whole site */
+    font-family: "Helvetica Neue", Arial, sans-serif;        /* Main font for whole site */
     background-color: #f0f0f0;                      /* Light grey background */
     color: #1f2937;                                 /* Default text color */
 }
