@@ -2,9 +2,9 @@
    1️⃣ GLOBAL RESET (Removes default browser spacing)
 ========================================= */
 * {
-    margin: 0;          /* Removes default margin */
-    padding: 0;         /* Removes default padding */
-    box-sizing: border-box;  /* Makes layout sizing predictable */
+    margin: 0;                                     /* Removes default margin */
+    padding: 0;                                    /* Removes default padding */
+    box-sizing: border-box;                        /* Makes layout sizing predictable */
 }
 
 
@@ -12,9 +12,9 @@
    2️⃣ BODY STYLING (Applies to entire website)
 ========================================= */
 body {
-    font-family: "Aptos", Arial, sans-serif;  /* Main font for whole site */
-    background-color: #f0f0f0;   /* Light grey background */
-    color: #1f2937;              /* Default text color */
+    font-family: "Aptos", Arial, sans-serif;        /* Main font for whole site */
+    background-color: #f0f0f0;                      /* Light grey background */
+    color: #1f2937;                                 /* Default text color */
 }
 
 
@@ -22,16 +22,16 @@ body {
    3️⃣ NAVIGATION BAR CONTAINER
 ========================================= */
 .navbar {
-    position: fixed;            /* Keeps navbar fixed at top */
-    top: 0;                     /* Stick to very top */
-    width: 100%;                /* Full width */
-    background-color: #ffffff;  /* White background */
-    border-bottom: 1px solid #ddd; /* Light divider line */
-    display: flex;              /* Horizontal layout */
-    justify-content: space-between; /* Push left/right apart */
-    align-items: center;        /* Vertical alignment */
-    padding: 15px 60px;         /* Space inside navbar */
-    z-index: 1000;              /* Keeps navbar above content */
+    position: fixed;                                 /* Keeps navbar fixed at top */
+    top: 0;                                          /* Stick to very top */
+    width: 100%;                                     /* Full width */
+    background-color: #ffffff;                       /* White background */
+    border-bottom: 1px solid #ddd;                   /* Light divider line */
+    display: flex;                                   /* Horizontal layout */
+    justify-content: space-between;                  /* Push left/right apart */
+    align-items: center;                             /* Vertical alignment */
+    padding: 15px 60px;                              /* Space inside navbar */
+    z-index: 1000;                                   /* Keeps navbar above content */
 }
 
 
@@ -39,8 +39,8 @@ body {
    4️⃣ LOGO TEXT (Your name on left)
 ========================================= */
 .navbar .logo {
-    font-size: 20px;    /* Logo size */
-    font-weight: bold;  /* Bold text */
+    font-size: 20px;                                  /* Logo size */
+    font-weight: bold;                                /* Bold text */
 }
 
 
@@ -48,15 +48,15 @@ body {
    5️⃣ NAVIGATION LINKS (Right side)
 ========================================= */
 .navbar .nav-links a {
-    text-decoration: none;  /* Removes underline */
-    color: #1f2937;         /* Default link color */
-    margin-left: 30px;      /* Space between links */
-    font-weight: 500;       /* Medium weight */
-    transition: 0.2s ease;  /* Smooth hover animation */
+    text-decoration: none;                             /* Removes underline */
+    color: #1f2937;                                    /* Default link color */
+    margin-left: 30px;                                 /* Space between links */
+    font-weight: 500;                                  /* Medium weight */
+    transition: 0.2s ease;                             /* Smooth hover animation */
 }
 
 .navbar .nav-links a:hover {
-    color: #1e3a8a;         /* Dark blue on hover */
+    color: #1e3a8a;                                    /* Dark blue on hover */
 }
 
 
@@ -64,8 +64,8 @@ body {
    6️⃣ MAIN PAGE CONTENT CONTAINER
 ========================================= */
 .content {
-    padding: 120px 80px;    /* Top padding to avoid fixed navbar */
-    max-width: 1000px;      /* Limits content width */
+    padding: 120px 80px;                               /* Top padding to avoid fixed navbar */
+    max-width: 1000px;                                 /* Limits content width */
 }
 
 
@@ -73,10 +73,10 @@ body {
    7️⃣ LOGO LINK STYLING
 ========================================= */
 .logo a {
-    text-decoration: none;  /* No underline */
-    color: #1f2937;         /* Same color as text */
+    text-decoration: none;                             /* No underline */
+    color: #1f2937;                                    /* Same color as text */
 }
 
 .logo a:hover {
-    color: #1e3a8a;         /* Blue on hover */
+    color: #1e3a8a;                                    /* Blue on hover */
 }
