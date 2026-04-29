@@ -157,14 +157,6 @@
       letter-spacing: -0.02em;
     }
 
-    .section-intro {
-      max-width: 900px;
-      font-size: 16px;
-      line-height: 1.75;
-      color: var(--text);
-      margin: 0 0 28px 0;
-    }
-
     /* ================================================= */
     /* ==================== ABOUT ====================== */
     /* ================================================= */
@@ -178,6 +170,12 @@
       grid-template-columns: 1.2fr 0.8fr;
       gap: 30px;
       align-items: center;
+      transition: 0.25s ease;
+    }
+
+    .about-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
     }
 
     .about-card p {
@@ -188,7 +186,7 @@
 
     .about-picture {
       width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 1 / 1;
       border-radius: var(--radius);
       overflow: hidden;
       background: var(--hover);
@@ -218,21 +216,15 @@
       border-radius: var(--radius);
       padding: 34px;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.15fr 300px;
       gap: 30px;
-      align-items: stretch;
+      align-items: start;
       transition: 0.25s ease;
     }
 
     .experience-tile:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow);
-    }
-
-    .experience-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
 
     .experience-text h3 {
@@ -274,8 +266,7 @@
 
     .experience-picture-tile {
       width: 100%;
-      height: 100%;
-      min-height: 260px;
+      aspect-ratio: 1 / 1;
       border-radius: var(--radius);
       overflow: hidden;
       background: var(--hover);
@@ -312,10 +303,9 @@
       grid-template-columns: 1fr 300px;
       gap: 30px;
       align-items: start;
-      margin-bottom: 18px;
     }
 
-    .project h3 {
+    .project-text h3 {
       margin: 0 0 14px 0;
       font-size: 22px;
       line-height: 1.3;
@@ -323,7 +313,7 @@
       letter-spacing: -0.02em;
     }
 
-    .project p {
+    .project-text p {
       font-size: 15px;
       line-height: 1.75;
       margin: 14px 0;
@@ -331,7 +321,7 @@
 
     .project-picture-subtile {
       width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 1 / 1;
       border-radius: var(--radius);
       overflow: hidden;
       background: var(--hover);
@@ -368,7 +358,7 @@
       height: 0;
       overflow: hidden;
       border-radius: var(--radius);
-      margin: 25px 0;
+      margin: 22px 0;
       background: var(--hover);
       border: 1px solid var(--border);
     }
@@ -435,6 +425,12 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 34px;
+      transition: 0.25s ease;
+    }
+
+    .contact-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
     }
 
     .contact-card p {
@@ -490,7 +486,8 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .project-header {
+      .project-header,
+      .experience-tile {
         grid-template-columns: 1fr 260px;
       }
     }
@@ -509,16 +506,14 @@
         flex-wrap: wrap;
       }
 
-      .experience-tile,
       .about-card,
+      .experience-tile,
       .project-header {
         grid-template-columns: 1fr;
       }
 
-      .experience-picture-tile {
-        min-height: 240px;
-      }
-
+      .about-picture,
+      .experience-picture-tile,
       .project-picture-subtile {
         max-width: 420px;
       }
@@ -548,6 +543,8 @@
         grid-template-columns: 1fr;
       }
 
+      .about-picture,
+      .experience-picture-tile,
       .project-picture-subtile {
         max-width: none;
       }
@@ -760,88 +757,95 @@
         <!-- RAV -->
         <article class="project">
           <div class="project-header">
-            <div>
+            <div class="project-text">
               <h3>RAV: Rapid Analysis Vehicle Platform for Safety and Security Exploration</h3>
 
               <p>
                 A unified scaled vehicle platform for evaluating E/E architectures, autonomy,
                 vehicle dynamics, sensing, communication, safety, and security under nominal,
-                faulted, and adversarial conditions.
+                faulted, and adversarial conditions. The platform enables modular experimentation
+                across safety-critical subsystems, including steer-by-wire, torque vectoring,
+                embedded control, vehicle sensing, communication layers, and hardware-in-the-loop validation.
               </p>
+
+              <div class="project-links">
+                <a href="rav.html">Read More →</a>
+                <span>|</span>
+                <a href="https://github.com/yourusername/project-link" target="_blank" rel="noopener noreferrer">
+                  View Project
+                </a>
+              </div>
             </div>
 
             <div class="project-picture-subtile">
               <img src="assets/rav_platform.jpeg" alt="RAV Rapid Analysis Vehicle platform">
             </div>
           </div>
-
-          <p>
-            The platform is designed to enable modular experimentation across safety-critical
-            subsystems, including steer-by-wire, torque vectoring, embedded control, vehicle sensing,
-            communication layers, and hardware-in-the-loop validation.
-          </p>
-
-          <div class="project-links">
-            <a href="rav.html">Read More →</a>
-            <span>|</span>
-            <a href="https://github.com/yourusername/project-link" target="_blank" rel="noopener noreferrer">View Project</a>
-          </div>
         </article>
 
         <!-- Steer-by-Wire -->
         <article class="project">
           <div class="project-header">
-            <div>
+            <div class="project-text">
               <h3>Steering Into Danger: Security Vulnerabilities in Steer-by-Wire Systems</h3>
 
               <p>
                 Experimental study analyzing security vulnerabilities in Steer-by-Wire systems.
                 Designed and executed physical-layer encoder attacks demonstrating destabilization risks.
+                The work uses a realistic steer-by-wire test platform to evaluate how physical-domain
+                attacks can impact steering behavior, driver input interpretation, and safety-critical
+                control response.
               </p>
+
+              <p>
+                <strong>Published in:</strong> 2025 IEEE Intelligent Vehicles Symposium (IV)
+              </p>
+
+              <div class="project-links">
+                <a href="sbw.html">Read More →</a>
+                <span>|</span>
+                <a href="https://ieeexplore.ieee.org/abstract/document/11097437" target="_blank" rel="noopener noreferrer">
+                  IEEE
+                </a>
+              </div>
             </div>
 
             <div class="project-picture-subtile">
               <img src="assets/project_sbw.png" alt="Steer-by-Wire security platform">
             </div>
           </div>
-
-          <p>
-            The work uses a realistic steer-by-wire test platform to evaluate how physical-domain
-            attacks can impact steering behavior, driver input interpretation, and safety-critical
-            control response.
-          </p>
-
-          <p><strong>Published in:</strong> 2025 IEEE Intelligent Vehicles Symposium (IV)</p>
-
-          <div class="project-links">
-            <a href="sbw.html">Read More →</a>
-            <span>|</span>
-            <a href="https://ieeexplore.ieee.org/abstract/document/11097437" target="_blank" rel="noopener noreferrer">IEEE</a>
-          </div>
         </article>
 
-        <!-- WSS ICCE -->
+        <!-- Wheel Speed Sensor -->
         <article class="project">
           <div class="project-header">
-            <div>
+            <div class="project-text">
               <h3>Hands-On Exploration Platform for Automotive Wheel Speed Sensor Attacks</h3>
 
               <p>
                 Educational and experimental platform for understanding wheel speed sensor vulnerabilities
-                in safety-critical automotive systems.
+                in safety-critical automotive systems. The platform uses a tone wheel, Hall effect sensing,
+                drivetrain control, and an electromagnet-based attacker to explore spoofing and jamming
+                effects on wheel speed measurements and vehicle-level interpretation.
               </p>
+
+              <p>
+                <strong>Published in:</strong> 2025 IEEE ICCE
+              </p>
+
+              <div class="project-links">
+                <a href="help-wss.html">Read More →</a>
+                <span>|</span>
+                <a href="https://ieeexplore.ieee.org/abstract/document/10929833" target="_blank" rel="noopener noreferrer">
+                  IEEE
+                </a>
+              </div>
             </div>
 
             <div class="project-picture-subtile">
               <img src="assets/project_wss.png" alt="Wheel speed sensor attack exploration platform">
             </div>
           </div>
-
-          <p>
-            The platform uses a tone wheel, Hall effect sensing, drivetrain control, and an
-            electromagnet-based attacker to explore spoofing and jamming effects on wheel speed
-            measurements and vehicle-level interpretation.
-          </p>
 
           <div class="video-container">
             <iframe
@@ -851,38 +855,38 @@
               allowfullscreen>
             </iframe>
           </div>
-
-          <p><strong>Published in:</strong> 2025 IEEE ICCE</p>
-
-          <div class="project-links">
-            <a href="help-wss.html">Read More →</a>
-            <span>|</span>
-            <a href="https://ieeexplore.ieee.org/abstract/document/10929833" target="_blank" rel="noopener noreferrer">IEEE</a>
-          </div>
         </article>
 
         <!-- AutoHal -->
         <article class="project">
           <div class="project-header">
-            <div>
+            <div class="project-text">
               <h3>AutoHal: Ranging Sensor Attacks Exploration Platform</h3>
 
               <p>
                 Flexible platform for analyzing security vulnerabilities in automotive ranging sensors,
-                enabling evaluation of perception-layer spoofing and jamming scenarios.
+                enabling evaluation of perception-layer spoofing and jamming scenarios. AutoHal provides
+                a modular attacker and testbed for hands-on exploration of how automotive ranging sensors
+                can be manipulated and how such manipulation affects downstream perception and decision-making.
               </p>
+
+              <p>
+                <strong>Published in:</strong> 2022 IEEE ICCE
+              </p>
+
+              <div class="project-links">
+                <a href="autohal.html">Read More →</a>
+                <span>|</span>
+                <a href="https://ieeexplore.ieee.org/abstract/document/9730213" target="_blank" rel="noopener noreferrer">
+                  IEEE
+                </a>
+              </div>
             </div>
 
             <div class="project-picture-subtile">
               <img src="assets/project_autohal.png" alt="AutoHal ranging sensor attack platform">
             </div>
           </div>
-
-          <p>
-            AutoHal provides a modular attacker and testbed for hands-on exploration of how automotive
-            ranging sensors can be manipulated and how such manipulation affects downstream perception
-            and decision-making behavior.
-          </p>
 
           <div class="video-container">
             <iframe
@@ -892,38 +896,38 @@
               allowfullscreen>
             </iframe>
           </div>
-
-          <p><strong>Published in:</strong> 2022 IEEE ICCE</p>
-
-          <div class="project-links">
-            <a href="autohal.html">Read More →</a>
-            <span>|</span>
-            <a href="https://ieeexplore.ieee.org/abstract/document/9730213" target="_blank" rel="noopener noreferrer">IEEE</a>
-          </div>
         </article>
 
         <!-- VeCAEP -->
         <article class="project">
           <div class="project-header">
-            <div>
+            <div class="project-text">
               <h3>VeCAEP: Vehicular Communication Attacks Platform</h3>
 
               <p>
                 Hands-on exploration platform for communication-layer attacks and their impact
-                on Cooperative Adaptive Cruise Control scenarios.
+                on Cooperative Adaptive Cruise Control scenarios. The platform demonstrates how
+                malicious communication behavior can influence cooperative driving applications and
+                provides an interactive environment for exploring vehicular network security concepts.
               </p>
+
+              <p>
+                <strong>Published in:</strong> 2023 IEEE VTC
+              </p>
+
+              <div class="project-links">
+                <a href="vecaep.html">Read More →</a>
+                <span>|</span>
+                <a href="https://ieeexplore.ieee.org/abstract/document/10199804" target="_blank" rel="noopener noreferrer">
+                  IEEE
+                </a>
+              </div>
             </div>
 
             <div class="project-picture-subtile">
               <img src="assets/project_vecaep.png" alt="VeCAEP vehicular communication attacks platform">
             </div>
           </div>
-
-          <p>
-            The platform demonstrates how malicious communication behavior can influence cooperative
-            driving applications and provides an interactive environment for exploring vehicular
-            network security concepts.
-          </p>
 
           <div class="video-container">
             <iframe
@@ -933,78 +937,69 @@
               allowfullscreen>
             </iframe>
           </div>
-
-          <p><strong>Published in:</strong> 2023 IEEE VTC</p>
-
-          <div class="project-links">
-            <a href="vecaep.html">Read More →</a>
-            <span>|</span>
-            <a href="https://ieeexplore.ieee.org/abstract/document/10199804" target="_blank" rel="noopener noreferrer">IEEE</a>
-          </div>
         </article>
 
         <!-- Vehicular Health -->
         <article class="project">
           <div class="project-header">
-            <div>
+            <div class="project-text">
               <h3>IoT-Based Vehicular Health Monitoring Framework</h3>
 
               <p>
                 Reliability and safety framework for monitoring impending failures in drivetrain,
-                suspension, and steering systems for autonomous vehicle fleets.
+                suspension, and steering systems for autonomous vehicle fleets. The framework explores
+                how IoT-based sensing, data collection, and system-level monitoring can support health
+                assessment of dynamic vehicle components and improve reliability for future autonomous fleets.
               </p>
+
+              <p>
+                <strong>Published in:</strong> 2025 IEEE ICCE
+              </p>
+
+              <div class="project-links">
+                <a href="veh-health.html">Read More →</a>
+                <span>|</span>
+                <a href="https://ieeexplore.ieee.org/abstract/document/10930165" target="_blank" rel="noopener noreferrer">
+                  IEEE
+                </a>
+              </div>
             </div>
 
             <div class="project-picture-subtile">
               <img src="assets/project_vehicle_health.png" alt="IoT-based vehicular health monitoring framework">
             </div>
           </div>
-
-          <p>
-            The framework explores how IoT-based sensing, data collection, and system-level monitoring
-            can support health assessment of dynamic vehicle components and improve reliability for
-            future autonomous fleets.
-          </p>
-
-          <p><strong>Published in:</strong> 2025 IEEE ICCE</p>
-
-          <div class="project-links">
-            <a href="veh-health.html">Read More →</a>
-            <span>|</span>
-            <a href="https://ieeexplore.ieee.org/abstract/document/10930165" target="_blank" rel="noopener noreferrer">IEEE</a>
-          </div>
         </article>
 
         <!-- MASC -->
         <article class="project">
           <div class="project-header">
-            <div>
+            <div class="project-text">
               <h3>MASC: Wearable Infectious Disease Detection Platform</h3>
 
               <p>
                 Wearable health monitoring prototype focused on infectious disease detection,
-                hardware integration, PCB development, and validation testing.
+                hardware integration, PCB development, and validation testing. Contributed to hardware
+                build, PCB design, integration, verification, and prototype testing for a wearable sensing
+                platform designed to support health monitoring applications.
               </p>
+
+              <p>
+                <strong>My role:</strong> Hardware build · PCB design · Integration · Verification
+              </p>
+
+              <div class="project-links">
+                <a href="masc.html">Read More →</a>
+                <span>|</span>
+                <a href="https://ieeexplore.ieee.org/abstract/document/10870051" target="_blank" rel="noopener noreferrer">
+                  IEEE
+                </a>
+              </div>
             </div>
 
             <div class="project-picture-subtile">
               <img src="assets/project_masc.png" alt="MASC wearable infectious disease detection platform">
             </div>
-          </div>
-
-          <p>
-            Contributed to hardware build, PCB design, integration, verification, and prototype testing
-            for a wearable sensing platform designed to support health monitoring applications.
-          </p>
-
-          <p>
-            <strong>My role:</strong> Hardware build · PCB design · Integration · Verification
-          </p>
-
-          <div class="project-links">
-            <a href="masc.html">Read More →</a>
-            <span>|</span>
-            <a href="https://ieeexplore.ieee.org/abstract/document/10870051" target="_blank" rel="noopener noreferrer">IEEE</a>
           </div>
         </article>
 
@@ -1097,10 +1092,21 @@
           </p>
 
           <div class="contact-links">
-            <a href="https://github.com/BhagawatYedla" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/bhagawatyedla/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://scholar.google.com/citations?hl=en&user=ENHu-lgAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-            <a href="mailto:your-email@example.com">Email</a>
+            <a href="https://github.com/BhagawatYedla" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/bhagawatyedla/" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+
+            <a href="https://scholar.google.com/citations?hl=en&user=ENHu-lgAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">
+              Google Scholar
+            </a>
+
+            <a href="mailto:your-email@example.com">
+              Email
+            </a>
           </div>
         </div>
       </section>
@@ -1118,7 +1124,6 @@
   <!-- =========================================================
        EMBEDDED JS
        - Keeps sidebar active state in sync while scrolling
-       - Still a single index.html file
   ========================================================== -->
   <script>
     const sections = document.querySelectorAll("main section[id]");
