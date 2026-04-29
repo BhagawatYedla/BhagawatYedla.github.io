@@ -3,21 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Bhagawat Yedla | Systems Engineer</title>
 
   <style>
-    :root{
-      --bg: #f8f5ef;        /* cream */
-      --text: #1f2937;      /* slate */
+    :root {
+      --bg: #f8f5ef;
+      --text: #1f2937;
       --muted: #6b7280;
       --card: #ffffff;
       --border: #e5e7eb;
       --link: #1e40af;
       --heading: #1e3a8a;
       --hover: #f3f4f6;
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      --radius: 10px;
+      --radius-sm: 6px;
+      --max-width: 1600px;
     }
 
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: "Segoe UI", sans-serif;
@@ -26,200 +37,353 @@
       color: var(--text);
     }
 
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    /* ================================================= */
+    /* =================== HEADER ====================== */
+    /* ================================================= */
+
     header {
-      padding: 80px 20px;
+      padding: 90px 20px 80px;
       text-align: center;
       background: var(--card);
       border-bottom: 1px solid var(--border);
     }
 
-    h1 {
-      font-size: 42px;
-      margin: 0 0 10px 0;
+    header h1 {
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin: 0 0 14px 0;
+      color: #111827;
     }
 
-    /* Section headings */
-    h2 {
-      color: var(--heading);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 10px;
-      margin: 0 0 30px 0;
-    }
-
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
-    a:focus-visible{
-      outline: 2px solid var(--link);
-      outline-offset: 3px;
-      border-radius: 4px;
+    header p {
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.6;
+      color: var(--muted);
     }
 
     /* ================================================= */
     /* =================== LAYOUT ====================== */
     /* ================================================= */
 
-    .page-layout{
-      display:grid;
+    .page-layout {
+      display: grid;
       grid-template-columns: 240px 1fr;
       gap: 30px;
-      max-width: 1600px;   /* was 1200px */
+      max-width: var(--max-width);
       margin: 0 auto;
       padding: 40px 20px;
-      align-items:start;
+      align-items: start;
     }
-    .sidebar{
+
+    .sidebar {
       position: sticky;
       top: 20px;
       align-self: start;
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: var(--radius-sm);
       padding: 16px;
     }
 
-    .sidebar h3{
+    .sidebar h3 {
       margin: 0 0 12px 0;
       font-size: 14px;
       color: #111827;
       letter-spacing: 0.2px;
     }
 
-    .toc{
-      list-style:none;
-      padding:0;
-      margin:0;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
+    .toc {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .toc a{
-      display:block;
-      padding:8px 10px;
-      border-radius:6px;
+    .toc a {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 6px;
       color: var(--link);
       background: transparent;
-    }
-
-    .toc a:hover{
-      background: var(--hover);
-      text-decoration:none;
-    }
-
-    .main-content section{
-      padding: 40px 0;
-    }
-
-    /* Mobile: stack layout */
-    @media (max-width: 900px){
-      .page-layout{
-        grid-template-columns: 1fr;
-      }
-      .sidebar{
-        position: static;
-      }
-    }
-
-    /* ===== Experience tiles ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .tile {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 25px;
-      border-radius: 6px;
       transition: 0.2s ease;
     }
 
-    .tile:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    .toc a:hover {
+      background: var(--hover);
+      text-decoration: none;
     }
 
-    .tile h3 {
-      margin: 0 0 12px 0;
-      color: #111827;
-      font-size: 18px;
-      line-height: 1.3;
+    .toc a.is-active {
+      background: #111827;
+      color: white;
     }
 
-    .tile p {
+    .main-content section {
+      padding: 42px 0;
+      scroll-margin-top: 30px;
+    }
+
+    h2 {
+      color: var(--heading);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+      margin: 0 0 30px 0;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      max-width: 900px;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text);
+      margin: 0 0 28px 0;
+    }
+
+    /* ================================================= */
+    /* ==================== ABOUT ====================== */
+    /* ================================================= */
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about-card p {
       margin: 0;
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 16px;
+      line-height: 1.8;
     }
 
-/* ========================= */
-/* ===== Projects Layout ==== */
-/* ========================= */
+    .about-picture {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--hover);
+      border: 1px solid var(--border);
+    }
 
-.project {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 40px;
-  margin-bottom: 60px;
-  transition: 0.25s ease;
-}
+    .about-picture img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
 
-.project:hover {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  transform: translateY(-3px);
-}
+    /* ================================================= */
+    /* ================= EXPERIENCE ==================== */
+    /* ================================================= */
 
-.project h3 {
-  margin-top: 0;
-  font-size: 22px;
-  color: #111827;
-}
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
 
-.project p {
-  font-size: 15px;
-  line-height: 1.7;
-  margin: 15px 0;
-}
+    .experience-tile {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 30px;
+      align-items: stretch;
+      transition: 0.25s ease;
+    }
 
-/* Image styling */
-.project img {
-  width: 100%;
-  max-width: 900px;
-  border-radius: 10px;
-  margin: 20px 0;
-}
+    .experience-tile:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
 
-/* Responsive video container */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 10px;
-  margin: 25px 0;
-}
+    .experience-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+    .experience-text h3 {
+      margin: 0 0 10px 0;
+      color: #111827;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
 
-    
+    .experience-meta {
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .experience-text p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .experience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .experience-tag {
+      background: var(--hover);
+      border: 1px solid var(--border);
+      color: #111827;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+    }
+
+    .experience-picture-tile {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--hover);
+      border: 1px solid var(--border);
+    }
+
+    .experience-picture-tile img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ================================================= */
+    /* =================== PROJECTS ==================== */
+    /* ================================================= */
+
+    .project {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      margin-bottom: 34px;
+      transition: 0.25s ease;
+    }
+
+    .project:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
+    }
+
+    .project-header {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 30px;
+      align-items: start;
+      margin-bottom: 18px;
+    }
+
+    .project h3 {
+      margin: 0 0 14px 0;
+      font-size: 22px;
+      line-height: 1.3;
+      color: #111827;
+      letter-spacing: -0.02em;
+    }
+
+    .project p {
+      font-size: 15px;
+      line-height: 1.75;
+      margin: 14px 0;
+    }
+
+    .project-picture-subtile {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--hover);
+      border: 1px solid var(--border);
+    }
+
+    .project-picture-subtile img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
     .project-links {
-      margin-top: auto;
+      margin-top: 18px;
       font-size: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
     }
 
-    /* ===== Skills ===== */
+    .project-links a {
+      font-weight: 600;
+    }
+
+    .project-links span {
+      color: var(--muted);
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      margin: 25px 0;
+      background: var(--hover);
+      border: 1px solid var(--border);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ================================================= */
+    /* ==================== SKILLS ===================== */
+    /* ================================================= */
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -227,19 +391,11 @@
       margin-top: 30px;
     }
 
-    @media (max-width: 1000px) {
-      .skills-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 600px) {
-      .skills-grid { grid-template-columns: 1fr; }
-    }
-
     .skill-card {
       background: var(--card);
       border: 1px solid var(--border);
       padding: 22px;
-      border-radius: 6px;
+      border-radius: var(--radius-sm);
       transition: 0.2s ease;
     }
 
@@ -270,6 +426,52 @@
       border: 1px solid var(--border);
     }
 
+    /* ================================================= */
+    /* =================== CONTACT ===================== */
+    /* ================================================= */
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+    }
+
+    .contact-card p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      background: var(--hover);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .contact-links a:hover {
+      background: #111827;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* ================================================= */
+    /* ==================== FOOTER ===================== */
+    /* ================================================= */
+
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -278,206 +480,539 @@
       font-size: 14px;
       color: var(--muted);
     }
+
+    /* ================================================= */
+    /* ================== RESPONSIVE =================== */
+    /* ================================================= */
+
+    @media (max-width: 1100px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-header {
+        grid-template-columns: 1fr 260px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .page-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .toc {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .experience-tile,
+      .about-card,
+      .project-header {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-picture-tile {
+        min-height: 240px;
+      }
+
+      .project-picture-subtile {
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 64px 18px;
+      }
+
+      .page-layout {
+        padding: 24px 14px;
+      }
+
+      .main-content section {
+        padding: 34px 0;
+      }
+
+      .about-card,
+      .experience-tile,
+      .project,
+      .contact-card {
+        padding: 24px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-picture-subtile {
+        max-width: none;
+      }
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
   <header>
     <h1>Bhagawat Yedla</h1>
-    <p>Systems Engineer building secure and controllable autonomous platforms</p>
+    <p>
+      Systems engineer building secure, controllable, and physically grounded autonomous platforms.
+    </p>
   </header>
 
+  <!-- =========================================================
+       PAGE LAYOUT
+  ========================================================== -->
   <div class="page-layout">
+
+    <!-- =========================================================
+         SIDEBAR
+    ========================================================== -->
     <aside class="sidebar" aria-label="Table of contents">
       <h3>Contents</h3>
+
       <ul class="toc">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Technical Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" class="toc-link is-active">About</a></li>
+        <li><a href="#experience" class="toc-link">Experience</a></li>
+        <li><a href="#projects" class="toc-link">Projects</a></li>
+        <li><a href="#skills" class="toc-link">Technical Skills</a></li>
+        <li><a href="#contact" class="toc-link">Contact</a></li>
       </ul>
     </aside>
 
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
     <main class="main-content">
 
+      <!-- =========================================================
+           ABOUT
+      ========================================================== -->
       <section id="about">
-        <h2>About Me</h2>
-        <p>
-          Ph.D. candidate in ECE with a strong foundation in vehicle dynamics, control systems, and embedded software development.
-          I build scalable autonomous vehicle platforms to study functional safety, cybersecurity, and real-time system behavior.
-          My experience spans torque vectoring, steer-by-wire systems, RTOS-based motor control, and hardware-in-the-loop validation.
-          I aim to pursue a career in functional safety and systems engineering, developing fail-safe and fail-operational architectures
-          for next-generation electric and autonomous vehicles.
-        </p>
-      </section>
+        <h2>About</h2>
 
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="grid">
-          <div class="tile">
-            <h3>Graduate Research Assistant<br>University of Florida (2021–Present)</h3>
+        <div class="about-card">
+          <div>
             <p>
-              Led vehicular safety/security exploration platforms. Defined requirements and validation plans, implemented RTOS-based
-              steer-by-wire and torque vectoring systems, and ran fault-injection experiments on safety-critical components.
+              I am a Ph.D. candidate in Electrical and Computer Engineering with a strong foundation in
+              mechanical design, embedded systems, vehicle dynamics, controls, and autonomous vehicle safety.
+              I build scalable cyber-physical platforms to study functional safety, cybersecurity, and
+              real-time system behavior in modern vehicle systems.
+              <br><br>
+              My work spans torque vectoring, steer-by-wire systems, wheel speed sensing, ranging sensors,
+              communication attacks, RTOS-based motor control, hardware-in-the-loop validation, and physical
+              testbed development. I aim to pursue systems engineering, robotics, and functional safety roles
+              focused on fail-safe and fail-operational architectures for next-generation electric and
+              autonomous platforms.
             </p>
           </div>
 
-          <div class="tile">
-            <h3>Mechanical Engineer<br>Laxco Inc (2020)</h3>
-            <p>
-              Designed precision electromechanical assemblies; performed FEA and failure analysis; developed an anti-backlash mechanism
-              achieving 0.9 µm precision.
-            </p>
-          </div>
-
-          <div class="tile">
-            <h3>Graduate Research Assistant<br>University of Florida (2019–2020)</h3>
-            <p>
-              Designed thermally managed enclosures for NMR/NQR systems, reducing test cycle time by 76% through thermal/EMI optimization.
-            </p>
+          <div class="about-picture">
+            <img src="assets/about_home.png" alt="Bhagawat Yedla portfolio overview image">
           </div>
         </div>
       </section>
 
-<section id="projects">
-  <h2>Projects</h2>
+      <!-- =========================================================
+           EXPERIENCE
+      ========================================================== -->
+      <section id="experience">
+        <h2>Experience</h2>
 
-  <!-- RAV -->
-  <div class="project">
-    <h3>RAV: Rapid Analysis Vehicle Platform for Safety and Security Exploration</h3>
+        <div class="experience-list">
 
-    <img src="assets/rav_platform.jpeg" alt="RAV Platform Image">
+          <!-- Experience 1 -->
+          <article class="experience-tile">
+            <div class="experience-text">
+              <h3>Graduate Research Assistant</h3>
 
-    <p>
-      Unified platform for evaluating E/E architectures under faulted conditions.
-      Designed to enable modular experimentation across safety-critical subsystems.
-    </p>
+              <div class="experience-meta">
+                University of Florida · 2021 – Present
+              </div>
 
-    <a href="rav.html">Read More →</a> |
-    <a href="https://github.com/yourusername/project-link" target="_blank">View Project</a>
-  </div>
+              <p>
+                Led the design and experimental validation of vehicular safety and security exploration
+                platforms. Defined system requirements, validation plans, and test architectures for scaled
+                autonomous vehicle systems, steer-by-wire platforms, wheel speed sensor attack testbeds,
+                ranging sensor attack platforms, and mixed-reality vehicle experiments.
+              </p>
 
+              <div class="experience-tags">
+                <span class="experience-tag">Autonomous Vehicles</span>
+                <span class="experience-tag">Cyber-Physical Systems</span>
+                <span class="experience-tag">Steer-by-Wire</span>
+                <span class="experience-tag">Motor Control</span>
+                <span class="experience-tag">Validation</span>
+              </div>
+            </div>
 
-  <!-- Steer-by-Wire -->
-  <div class="project">
-    <h3>Steering Into Danger: Security Vulnerabilities in Steer-by-Wire Systems</h3>
+            <div class="experience-picture-tile">
+              <img src="assets/experience_uf_gra.png" alt="University of Florida Graduate Research Assistant work">
+            </div>
+          </article>
 
-    <p>
-      First experimental study analyzing security vulnerabilities in Steer-by-Wire (SbW) systems.
-      Designed and executed physical-layer encoder attacks demonstrating destabilization risks.
-    </p>
+          <!-- Experience 2 -->
+          <article class="experience-tile">
+            <div class="experience-text">
+              <h3>Electromechanical Systems Engineer</h3>
 
-    <p><strong>Published in:</strong> 2025 IEEE Intelligent Vehicles Symposium (IV)</p>
+              <div class="experience-meta">
+                Resonance Signatures · 2020 – 2021
+              </div>
 
-    <a href="sbw.html">Read More →</a> |
-    <a href="https://ieeexplore.ieee.org/abstract/document/11097437" target="_blank">IEEE</a>
-  </div>
+              <p>
+                Designed and validated electromechanical systems for precision NMR/NQR instrumentation.
+                Translated customer and system requirements into mechanical, thermal, EMI, power,
+                packaging, and validation requirements while supporting prototype development,
+                instrumentation reliability, and system-level integration.
+              </p>
 
+              <div class="experience-tags">
+                <span class="experience-tag">Electromechanical Design</span>
+                <span class="experience-tag">NMR/NQR Systems</span>
+                <span class="experience-tag">Thermal Design</span>
+                <span class="experience-tag">EMI-Aware Packaging</span>
+                <span class="experience-tag">Prototype Validation</span>
+              </div>
+            </div>
 
-  <!-- WSS ICCE -->
-  <div class="project">
-    <h3>Hands-On Exploration Platform for Automotive Wheel Speed Sensor Attacks</h3>
+            <div class="experience-picture-tile">
+              <img src="assets/experience_resonance.png" alt="Resonance Signatures electromechanical systems work">
+            </div>
+          </article>
 
-    <p>
-      First educational platform for understanding wheel speed sensor vulnerabilities
-      in safety-critical automotive systems.
-    </p>
+          <!-- Experience 3 -->
+          <article class="experience-tile">
+            <div class="experience-text">
+              <h3>Mechanical Engineer</h3>
 
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/iH8v8uam_4w"
-        title="WSS Platform Demo"
-        frameborder="0"
-        allowfullscreen></iframe>
-    </div>
+              <div class="experience-meta">
+                Laxco · 2020
+              </div>
 
-    <p><strong>Published in:</strong> 2025 IEEE ICCE</p>
+              <p>
+                Designed precision electromechanical assemblies for microscopy and laser capture
+                microdissection systems. Supported robotic grippers, precision arms, motion stages,
+                optical packaging, tolerance stack-up analysis, FEA, root-cause analysis, production
+                support, and reliability improvements.
+              </p>
 
-    <a href="help-wss.html">Read More →</a> |
-    <a href="https://ieeexplore.ieee.org/abstract/document/10929833" target="_blank">IEEE</a>
-  </div>
+              <div class="experience-tags">
+                <span class="experience-tag">Precision Mechanisms</span>
+                <span class="experience-tag">Robotic Grippers</span>
+                <span class="experience-tag">Optomechanics</span>
+                <span class="experience-tag">GD&amp;T</span>
+                <span class="experience-tag">DFM/DFA</span>
+              </div>
+            </div>
 
+            <div class="experience-picture-tile">
+              <img src="assets/experience_laxco.png" alt="Laxco mechanical engineering work">
+            </div>
+          </article>
 
-  <!-- AutoHal -->
-  <div class="project">
-    <h3>AutoHal: Ranging Sensor Attacks Exploration Platform</h3>
+          <!-- Experience 4 -->
+          <article class="experience-tile">
+            <div class="experience-text">
+              <h3>Research Assistant</h3>
 
-    <p>
-      Flexible platform for analyzing security vulnerabilities in automotive ranging sensors,
-      enabling evaluation of perception-layer attack scenarios.
-    </p>
+              <div class="experience-meta">
+                University of Florida · 2018 – 2020
+              </div>
 
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/2Cchy7BELUA"
-        title="AutoHal Demo"
-        frameborder="0"
-        allowfullscreen></iframe>
-    </div>
+              <p>
+                Designed and validated thermally managed, EMI-conscious hardware for lab-developed
+                NMR/NQR spectrometer systems. Supported enclosure design, thermal control,
+                electromagnetic packaging, prototype testing, and instrumentation reliability,
+                reducing test cycle time through improved integration.
+              </p>
 
-    <p><strong>Published in:</strong> 2022 IEEE ICCE</p>
+              <div class="experience-tags">
+                <span class="experience-tag">Instrumentation</span>
+                <span class="experience-tag">Thermal Management</span>
+                <span class="experience-tag">EMI Shielding</span>
+                <span class="experience-tag">Mechanical Packaging</span>
+                <span class="experience-tag">Testing</span>
+              </div>
+            </div>
 
-    <a href="autohal.html">Read More →</a> |
-    <a href="https://ieeexplore.ieee.org/abstract/document/9730213" target="_blank">IEEE</a>
-  </div>
+            <div class="experience-picture-tile">
+              <img src="assets/experience_uf_ra.png" alt="University of Florida Research Assistant instrumentation work">
+            </div>
+          </article>
 
+        </div>
+      </section>
 
-  <!-- VeCAEP -->
-  <div class="project">
-    <h3>VeCAEP: Vehicular Communication Attacks Platform</h3>
+      <!-- =========================================================
+           PROJECTS
+      ========================================================== -->
+      <section id="projects">
+        <h2>Projects</h2>
 
-    <p>
-      Hands-on exploration platform for communication-layer attacks and their impact
-      on Cooperative Adaptive Cruise Control (CACC).
-    </p>
+        <!-- RAV -->
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3>RAV: Rapid Analysis Vehicle Platform for Safety and Security Exploration</h3>
 
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/YAvMjm6eUbc"
-        title="VeCAEP Demo"
-        frameborder="0"
-        allowfullscreen></iframe>
-    </div>
+              <p>
+                A unified scaled vehicle platform for evaluating E/E architectures, autonomy,
+                vehicle dynamics, sensing, communication, safety, and security under nominal,
+                faulted, and adversarial conditions.
+              </p>
+            </div>
 
-    <p><strong>Published in:</strong> 2023 IEEE VTC</p>
+            <div class="project-picture-subtile">
+              <img src="assets/rav_platform.jpeg" alt="RAV Rapid Analysis Vehicle platform">
+            </div>
+          </div>
 
-    <a href="vecaep.html">Read More →</a> |
-    <a href="https://ieeexplore.ieee.org/abstract/document/10199804" target="_blank">IEEE</a>
-  </div>
+          <p>
+            The platform is designed to enable modular experimentation across safety-critical
+            subsystems, including steer-by-wire, torque vectoring, embedded control, vehicle sensing,
+            communication layers, and hardware-in-the-loop validation.
+          </p>
 
+          <div class="project-links">
+            <a href="rav.html">Read More →</a>
+            <span>|</span>
+            <a href="https://github.com/yourusername/project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
+        </article>
 
-  <!-- Vehicular Health -->
-  <div class="project">
-    <h3>IoT-Based Vehicular Health Monitoring Framework</h3>
+        <!-- Steer-by-Wire -->
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3>Steering Into Danger: Security Vulnerabilities in Steer-by-Wire Systems</h3>
 
-    <p>
-      Reliability and safety framework for monitoring impending failures in drivetrain,
-      suspension, and steering systems for autonomous fleets.
-    </p>
+              <p>
+                Experimental study analyzing security vulnerabilities in Steer-by-Wire systems.
+                Designed and executed physical-layer encoder attacks demonstrating destabilization risks.
+              </p>
+            </div>
 
-    <p><strong>Published in:</strong> 2025 IEEE ICCE</p>
+            <div class="project-picture-subtile">
+              <img src="assets/project_sbw.png" alt="Steer-by-Wire security platform">
+            </div>
+          </div>
 
-    <a href="veh-health.html">Read More →</a> |
-    <a href="https://ieeexplore.ieee.org/abstract/document/10930165" target="_blank">IEEE</a>
-  </div>
+          <p>
+            The work uses a realistic steer-by-wire test platform to evaluate how physical-domain
+            attacks can impact steering behavior, driver input interpretation, and safety-critical
+            control response.
+          </p>
 
+          <p><strong>Published in:</strong> 2025 IEEE Intelligent Vehicles Symposium (IV)</p>
 
-  <!-- MASC -->
-  <div class="project">
-    <h3>MASC: Wearable Infectious Disease Detection Platform</h3>
+          <div class="project-links">
+            <a href="sbw.html">Read More →</a>
+            <span>|</span>
+            <a href="https://ieeexplore.ieee.org/abstract/document/11097437" target="_blank" rel="noopener noreferrer">IEEE</a>
+          </div>
+        </article>
 
-    <p>
-      Built a wearable health monitoring prototype. Led hardware design,
-      PCB development, integration, and validation testing.
-    </p>
+        <!-- WSS ICCE -->
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3>Hands-On Exploration Platform for Automotive Wheel Speed Sensor Attacks</h3>
 
-    <p>
-      <strong>My role:</strong> Hardware build • PCB design • Integration & verification
-    </p>
+              <p>
+                Educational and experimental platform for understanding wheel speed sensor vulnerabilities
+                in safety-critical automotive systems.
+              </p>
+            </div>
 
-    <a href="masc.html">Read More →</a> |
-    <a href="https://ieeexplore.ieee.org/abstract/document/10870051" target="_blank">IEEE</a>
-  </div>
+            <div class="project-picture-subtile">
+              <img src="assets/project_wss.png" alt="Wheel speed sensor attack exploration platform">
+            </div>
+          </div>
 
-</section>
+          <p>
+            The platform uses a tone wheel, Hall effect sensing, drivetrain control, and an
+            electromagnet-based attacker to explore spoofing and jamming effects on wheel speed
+            measurements and vehicle-level interpretation.
+          </p>
+
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/iH8v8uam_4w"
+              title="WSS Platform Demo"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <p><strong>Published in:</strong> 2025 IEEE ICCE</p>
+
+          <div class="project-links">
+            <a href="help-wss.html">Read More →</a>
+            <span>|</span>
+            <a href="https://ieeexplore.ieee.org/abstract/document/10929833" target="_blank" rel="noopener noreferrer">IEEE</a>
+          </div>
+        </article>
+
+        <!-- AutoHal -->
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3>AutoHal: Ranging Sensor Attacks Exploration Platform</h3>
+
+              <p>
+                Flexible platform for analyzing security vulnerabilities in automotive ranging sensors,
+                enabling evaluation of perception-layer spoofing and jamming scenarios.
+              </p>
+            </div>
+
+            <div class="project-picture-subtile">
+              <img src="assets/project_autohal.png" alt="AutoHal ranging sensor attack platform">
+            </div>
+          </div>
+
+          <p>
+            AutoHal provides a modular attacker and testbed for hands-on exploration of how automotive
+            ranging sensors can be manipulated and how such manipulation affects downstream perception
+            and decision-making behavior.
+          </p>
+
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/2Cchy7BELUA"
+              title="AutoHal Demo"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <p><strong>Published in:</strong> 2022 IEEE ICCE</p>
+
+          <div class="project-links">
+            <a href="autohal.html">Read More →</a>
+            <span>|</span>
+            <a href="https://ieeexplore.ieee.org/abstract/document/9730213" target="_blank" rel="noopener noreferrer">IEEE</a>
+          </div>
+        </article>
+
+        <!-- VeCAEP -->
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3>VeCAEP: Vehicular Communication Attacks Platform</h3>
+
+              <p>
+                Hands-on exploration platform for communication-layer attacks and their impact
+                on Cooperative Adaptive Cruise Control scenarios.
+              </p>
+            </div>
+
+            <div class="project-picture-subtile">
+              <img src="assets/project_vecaep.png" alt="VeCAEP vehicular communication attacks platform">
+            </div>
+          </div>
+
+          <p>
+            The platform demonstrates how malicious communication behavior can influence cooperative
+            driving applications and provides an interactive environment for exploring vehicular
+            network security concepts.
+          </p>
+
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/YAvMjm6eUbc"
+              title="VeCAEP Demo"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <p><strong>Published in:</strong> 2023 IEEE VTC</p>
+
+          <div class="project-links">
+            <a href="vecaep.html">Read More →</a>
+            <span>|</span>
+            <a href="https://ieeexplore.ieee.org/abstract/document/10199804" target="_blank" rel="noopener noreferrer">IEEE</a>
+          </div>
+        </article>
+
+        <!-- Vehicular Health -->
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3>IoT-Based Vehicular Health Monitoring Framework</h3>
+
+              <p>
+                Reliability and safety framework for monitoring impending failures in drivetrain,
+                suspension, and steering systems for autonomous vehicle fleets.
+              </p>
+            </div>
+
+            <div class="project-picture-subtile">
+              <img src="assets/project_vehicle_health.png" alt="IoT-based vehicular health monitoring framework">
+            </div>
+          </div>
+
+          <p>
+            The framework explores how IoT-based sensing, data collection, and system-level monitoring
+            can support health assessment of dynamic vehicle components and improve reliability for
+            future autonomous fleets.
+          </p>
+
+          <p><strong>Published in:</strong> 2025 IEEE ICCE</p>
+
+          <div class="project-links">
+            <a href="veh-health.html">Read More →</a>
+            <span>|</span>
+            <a href="https://ieeexplore.ieee.org/abstract/document/10930165" target="_blank" rel="noopener noreferrer">IEEE</a>
+          </div>
+        </article>
+
+        <!-- MASC -->
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3>MASC: Wearable Infectious Disease Detection Platform</h3>
+
+              <p>
+                Wearable health monitoring prototype focused on infectious disease detection,
+                hardware integration, PCB development, and validation testing.
+              </p>
+            </div>
+
+            <div class="project-picture-subtile">
+              <img src="assets/project_masc.png" alt="MASC wearable infectious disease detection platform">
+            </div>
+          </div>
+
+          <p>
+            Contributed to hardware build, PCB design, integration, verification, and prototype testing
+            for a wearable sensing platform designed to support health monitoring applications.
+          </p>
+
+          <p>
+            <strong>My role:</strong> Hardware build · PCB design · Integration · Verification
+          </p>
+
+          <div class="project-links">
+            <a href="masc.html">Read More →</a>
+            <span>|</span>
+            <a href="https://ieeexplore.ieee.org/abstract/document/10870051" target="_blank" rel="noopener noreferrer">IEEE</a>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- =========================================================
+           TECHNICAL SKILLS
+      ========================================================== -->
       <section id="skills">
         <h2>Technical Skills</h2>
 
@@ -485,6 +1020,7 @@
 
           <div class="skill-card">
             <h3>CAD & Simulation</h3>
+
             <div class="skill-list">
               <span class="skill-chip">SolidWorks</span>
               <span class="skill-chip">Siemens NX</span>
@@ -499,6 +1035,7 @@
 
           <div class="skill-card">
             <h3>Programming & Control</h3>
+
             <div class="skill-list">
               <span class="skill-chip">C++</span>
               <span class="skill-chip">Python</span>
@@ -513,17 +1050,21 @@
 
           <div class="skill-card">
             <h3>Hardware & Prototyping</h3>
+
             <div class="skill-list">
               <span class="skill-chip">BLDC Motor Control</span>
               <span class="skill-chip">PCB Design</span>
               <span class="skill-chip">3D Printing</span>
               <span class="skill-chip">Machining</span>
               <span class="skill-chip">Soldering</span>
+              <span class="skill-chip">Oscilloscope Testing</span>
+              <span class="skill-chip">Sensor Integration</span>
             </div>
           </div>
 
           <div class="skill-card">
             <h3>Communication Protocols</h3>
+
             <div class="skill-list">
               <span class="skill-chip">UART</span>
               <span class="skill-chip">SPI</span>
@@ -542,18 +1083,71 @@
         </div>
       </section>
 
+      <!-- =========================================================
+           CONTACT
+      ========================================================== -->
       <section id="contact">
         <h2>Contact</h2>
-        <p>
-          <a href="https://github.com/BhagawatYedla" target="_blank" rel="noopener noreferrer">GitHub</a> |
-          <a href="https://www.linkedin.com/in/bhagawatyedla/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-          <a href="https://scholar.google.com/citations?hl=en&user=ENHu-lgAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        </p>
+
+        <div class="contact-card">
+          <p>
+            I am open to research collaborations, internships, and full-time engineering opportunities
+            in systems engineering, robotics, autonomous vehicles, mechatronics, product design,
+            embedded systems, and functional safety.
+          </p>
+
+          <div class="contact-links">
+            <a href="https://github.com/BhagawatYedla" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/bhagawatyedla/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?hl=en&user=ENHu-lgAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a href="mailto:your-email@example.com">Email</a>
+          </div>
+        </div>
       </section>
 
     </main>
   </div>
 
-  <footer>© 2026 Bhagawat Yedla</footer>
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer>
+    © 2026 Bhagawat Yedla
+  </footer>
+
+  <!-- =========================================================
+       EMBEDDED JS
+       - Keeps sidebar active state in sync while scrolling
+       - Still a single index.html file
+  ========================================================== -->
+  <script>
+    const sections = document.querySelectorAll("main section[id]");
+    const tocLinks = document.querySelectorAll(".toc-link");
+
+    function setActiveLink() {
+      let currentSectionId = "about";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const offset = 140;
+
+        if (window.scrollY >= sectionTop - offset) {
+          currentSectionId = section.getAttribute("id");
+        }
+      });
+
+      tocLinks.forEach((link) => {
+        link.classList.remove("is-active");
+
+        if (link.getAttribute("href") === "#" + currentSectionId) {
+          link.classList.add("is-active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", setActiveLink);
+    window.addEventListener("load", setActiveLink);
+  </script>
+
 </body>
 </html>
